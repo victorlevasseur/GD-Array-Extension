@@ -1,0 +1,93 @@
+
+#if defined(GD_IDE_ONLY)
+#include "GDCore/PlatformDefinition/PlatformExtension.h"
+#include "GDCore/Tools/Version.h"
+#include <boost/version.hpp>
+#include <iostream>
+#include <wx/intl.h>
+//Ensure the wxWidgets macro "_" returns a std::string
+#if defined(_)
+    #undef _
+#endif
+#define _(s) std::string(wxGetTranslation((s)).mb_str())
+
+/**
+ * \brief This class declares information about the JS extension.
+ */
+class JsExtension : public gd::PlatformExtension
+{
+public:
+
+    /**
+     * Constructor of an extension declares everything the extension contains : Objects, actions, conditions and expressions.
+     */
+    JsExtension()
+    {
+        SetExtensionInformation("Array",
+                              _("Array"),
+                              _("Extension to store values and text inside arrays."),
+                              "Victor Levasseur",
+                              "zlib/libpng License ( Open Source )");
+
+        CloneExtension("Game Develop C++ platform", "Array");
+
+        /**GetObjectMetadata("TextObject::Text").SetIncludeFile("TextObject/textruntimeobject.js");
+
+        GetAllActionsForObject("TextObject::Text")["TextObject::String"].codeExtraInformation
+            .SetFunctionName("setString").SetAssociatedGetter("getString").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllConditionsForObject("TextObject::Text")["TextObject::String"].codeExtraInformation
+            .SetFunctionName("getString").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllActionsForObject("TextObject::Text")["TextObject::Size"].codeExtraInformation
+            .SetFunctionName("setCharacterSize").SetAssociatedGetter("getCharacterSize").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllConditionsForObject("TextObject::Text")["TextObject::Size"].codeExtraInformation
+            .SetFunctionName("getCharacterSize").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllActionsForObject("TextObject::Text")["TextObject::Angle"].codeExtraInformation
+            .SetFunctionName("setAngle").SetAssociatedGetter("getAngle").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllConditionsForObject("TextObject::Text")["TextObject::Angle"].codeExtraInformation
+            .SetFunctionName("getAngle").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllActionsForObject("TextObject::Text")["TextObject::Opacity"].codeExtraInformation
+            .SetFunctionName("setOpacity").SetAssociatedGetter("getOpacity").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllConditionsForObject("TextObject::Text")["TextObject::Opacity"].codeExtraInformation
+            .SetFunctionName("getOpacity").SetIncludeFile("TextObject/textruntimeobject.js");
+
+        GetAllActionsForObject("TextObject::Text")["TextObject::SetBold"].codeExtraInformation
+            .SetFunctionName("setBold").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllConditionsForObject("TextObject::Text")["TextObject::IsBold"].codeExtraInformation
+            .SetFunctionName("isBold").SetIncludeFile("TextObject/textruntimeobject.js");
+
+        GetAllActionsForObject("TextObject::Text")["TextObject::SetItalic"].codeExtraInformation
+            .SetFunctionName("setItalic").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllConditionsForObject("TextObject::Text")["TextObject::IsItalic"].codeExtraInformation
+            .SetFunctionName("isItalic").SetIncludeFile("TextObject/textruntimeobject.js");
+
+        GetAllExpressionsForObject("TextObject::Text")["TextObject::Opacity"].codeExtraInformation
+            .SetFunctionName("getOpacity").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllExpressionsForObject("TextObject::Text")["TextObject::Angle"].codeExtraInformation
+            .SetFunctionName("getAngle").SetIncludeFile("TextObject/textruntimeobject.js");
+        GetAllStrExpressionsForObject("TextObject::Text")["TextObject::String"].codeExtraInformation
+            .SetFunctionName("getString").SetIncludeFile("TextObject/textruntimeobject.js");
+
+        GetAllActionsForObject("TextObject::Text")["TextObject::ChangeColor"].codeExtraInformation
+            .SetFunctionName("setColor").SetIncludeFile("TextObject/textruntimeobject.js");**/
+
+        StripUnimplementedInstructionsAndExpressions(); //Unimplemented things are listed here:
+    };
+    virtual ~JsExtension() {};
+};
+
+/**
+ * Used by Game Develop to create the extension class
+ * -- Do not need to be modified. --
+ */
+extern "C" gd::PlatformExtension * GD_EXTENSION_API CreateGDJSExtension() {
+    return new JsExtension;
+}
+
+/**
+ * Used by Game Develop to destroy the extension class
+ * -- Do not need to be modified. --
+ */
+extern "C" void GD_EXTENSION_API DestroyGDJSExtension(gd::PlatformExtension * p) {
+    delete p;
+}
+#endif
