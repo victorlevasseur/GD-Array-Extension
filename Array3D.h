@@ -30,6 +30,20 @@ public:
 
     ~Array3D() {};
 
+    inline Value& GetValue(int d1, int d2 = 0, int d3 = 0)
+    {
+        static Value badValue;
+
+        if(IsIndexIn(d1, d2, d3))
+        {
+            return m_array[d1][d2][d3];
+        }
+        else
+        {
+            return badValue;
+        }
+    }
+
     inline double GetValueAsNumber(int d1, int d2 = 0, int d3 = 0)
     {
         if(IsIndexIn(d1, d2, d3))

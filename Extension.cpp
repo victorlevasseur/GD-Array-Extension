@@ -265,15 +265,6 @@ public:
                     codeGenerator.AddIncludeFile("Array/Array3D.h");
                     codeGenerator.AddIncludeFile("Array/ArrayTools.h");
 
-                    // Adding necessary variables for the event (this variables are stacks to allow Iterate Event inside another Iterate Event).
-                    std::string variableCode;
-                    variableCode += "std::stack<int> arr_currentX;\n";
-                    variableCode += "std::stack<int> arr_currentY;\n";
-                    variableCode += "std::stack<int> arr_currentZ;\n";
-                    variableCode += "std::stack<arr::Value> arr_current;\n";
-
-                    codeGenerator.AddCustomCodeInMain(variableCode);
-
                     //Adding the main code of the event
                     std::string code("// 3D-Array Iterate Event\n");
 
@@ -284,26 +275,52 @@ public:
                     if (arrayNameExpr.empty()) arrayNameExpr = "\"\""; //If generation failed, we make sure output code is not empty.
 
                     code += "arr::Array3D &currentArray = arr::ArrayManager::getInstance()->GetArray3D(runtimeContext->scene, " + arrayNameExpr + ");\n";
-                    code += "for(unsigned int x = 0; x < currentArray.GetSize(0); x++)\n";
+                    code += "int arr_currentX;\n";
+                    code += "int arr_currentY;\n";
+                    code += "int arr_currentZ;\n";
+                    code += "arr::Value arr_current;\n";
+                    code += "for(unsigned int x = 0; x < currentArray.GetSize(1); x++)\n";
                     code += "{\n";
                     {
-                        code += "arr_currentX.push(x);\n";
-                        code += "for(unsigned int y = 0; y < currentArray.GetSize(1); y++)\n";
+                        code += "arr_currentX = x;\n";
+                        code += "for(unsigned int y = 0; y < currentArray.GetSize(2); y++)\n";
                         code += "{\n";
                         {
-                            code += "arr_currentY.push(y);\n";
-                            code += "for(unsigned int z = 0; z < currentArray.GetSize(2); z++)\n";
+                            code += "arr_currentY = y;\n";
+                            code += "for(unsigned int z = 0; z < currentArray.GetSize(3); z++)\n";
                             code += "{\n";
                             {
-                                code += "arr_currentZ.push(z);\n";
-                                code += "\n";
-                                code += "arr_currentZ.pop();\n";
+                                code += "arr_currentZ = z;\n";
+                                code += "arr_current = currentArray.GetValue(x, y, z);";
+
+                                // Generating condition/action/sub-event //
+                                code += codeGenerator.GenerateConditionsListCode(event.GetConditions(), context);
+
+                                std::string ifPredicat;
+                                for (unsigned int i = 0;i<event.GetConditions().size();++i)
+                                {
+                                    if (i!=0) ifPredicat += " && ";
+                                    ifPredicat += "condition"+ToString(i)+"IsTrue";
+                                }
+
+                                if ( !ifPredicat.empty() ) code += "if (" +ifPredicat+ ")\n";
+
+                                code += "{\n";
+                                code += codeGenerator.GenerateActionsListCode(event.GetActions(), context);
+
+                                if ( event.HasSubEvents() )
+                                {
+                                    code += "\n{\n";
+                                    code += codeGenerator.GenerateEventsListCode(event.GetSubEvents(), context);
+                                    code += "}\n";
+                                }
+
+                                code += "}\n";
+                                ///////////////////////////////////////////
                             }
                             code += "}\n";
-                            code += "arr_currentY.pop();\n";
                         }
                         code += "}\n";
-                        code += "arr_currentX.pop();\n";
                     }
                     code += "}\n";
 
@@ -321,6 +338,121 @@ public:
                     "res/function.png",
                     boost::shared_ptr<gd::BaseEvent>(new arr::vec::Array3DEvent))
                         .SetCodeGenerator(boost::shared_ptr<gd::EventMetadata::CodeGenerator>(arr3DCodeGen));
+        }
+
+        {
+            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
+            {
+                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
+                {
+                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+
+                    std::string code = "arr_currentX";
+
+                    return code;
+                };
+            };
+
+            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+
+            AddExpression("3D::CurrentX",
+                           _("Current X position in array"),
+                           _("Return the current X position in the array (when you use the \"iterate through 3D array\" event"),
+                           _("3D Array"),
+                           "res/function.png")
+                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
+        }
+
+        {
+            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
+            {
+                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
+                {
+                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+
+                    std::string code = "arr_currentY";
+
+                    return code;
+                };
+            };
+
+            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+
+            AddExpression("3D::CurrentY",
+                           _("Current Y position in array"),
+                           _("Return the current Y position in the array (when you use the \"iterate through 3D array\" event"),
+                           _("3D Array"),
+                           "res/function.png")
+                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
+        }
+
+        {
+            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
+            {
+                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
+                {
+                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+
+                    std::string code = "arr_currentZ";
+
+                    return code;
+                };
+            };
+
+            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+
+            AddExpression("3D::CurrentZ",
+                           _("Current Z position in array"),
+                           _("Return the current Z position in the array (when you use the \"iterate through 3D array\" event"),
+                           _("3D Array"),
+                           "res/function.png")
+                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
+        }
+
+        {
+            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
+            {
+                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
+                {
+                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+
+                    std::string code = "arr_current.GetAsNumber()";
+
+                    return code;
+                };
+            };
+
+            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+
+            AddExpression("3D::Current",
+                           _("Current value in array"),
+                           _("Return the current value as number in the array (when you use the \"iterate through 3D array\" event"),
+                           _("3D Array"),
+                           "res/function.png")
+                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
+        }
+
+        {
+            class CodeGenerator : public gd::StrExpressionMetadata::ExtraInformation::CustomCodeGenerator
+            {
+                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
+                {
+                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+
+                    std::string code = "arr_current.GetAsText()";
+
+                    return code;
+                };
+            };
+
+            gd::StrExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+
+            AddStrExpression("3D::Current",
+                           _("Current text in array"),
+                           _("Return the current value as text in the array (when you use the \"iterate through 3D array\" event"),
+                           _("3D Array"),
+                           "res/function.png")
+                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::StrExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
         }
 
 

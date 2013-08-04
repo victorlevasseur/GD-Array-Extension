@@ -59,9 +59,40 @@
             <Positions />
             <Events>
                 <Event disabled="false" folded="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions>
+                        <Condition>
+                            <Type value="DepartScene" Contraire="false" />
+                            <Parametre value="" />
+                        </Condition>
+                    </Conditions>
+                    <Actions>
+                        <Action>
+                            <Type value="Array::3D_SetSize" />
+                            <Parametre value='&quot;test&quot;' />
+                            <Parametre value="5" />
+                            <Parametre value="5" />
+                            <Parametre value="5" />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
+                </Event>
+                <Event disabled="false" folded="false" name='&quot;test&quot;'>
                     <Type value="Array::Array3DIterate" />
                     <Conditions />
-                    <Actions />
+                    <Actions>
+                        <Action>
+                            <Type value="EcrireTexte" />
+                            <Parametre value="" />
+                            <Parametre value="ToString(Array::3D::CurrentX())" />
+                            <Parametre value="10" />
+                            <Parametre value="10" />
+                            <Parametre value='&quot;0;0;0&quot;' />
+                            <Parametre value="20" />
+                            <Parametre value="" />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
                 </Event>
             </Events>
         </Scene>
