@@ -7,7 +7,7 @@ namespace arr
 
     void GD_EXTENSION_API InitArrays(RuntimeScene &scene)
     {
-        ArrayManager::getInstance()->ResetSceneArrays(&scene);
+        ArrayManager::getInstance()->ResetSceneArrays(scene.game);
     }
 
     ArrayManager* ArrayManager::_singleton = 0;

@@ -5,7 +5,8 @@
 #include <vector>
 #include <map>
 
-#include <GDCpp/RuntimeScene.h>
+#include "GDCpp/RuntimeScene.h"
+#include "GDCpp/Project.h"
 
 #include "ArrayValue.h"
 #include "Array3D.h"
@@ -51,29 +52,31 @@ namespace arr
         }
     }
 
-    inline void ResetSceneArrays(RuntimeScene *scene)
+    inline void ResetSceneArrays(Game *game)
     {
-        if(m_sceneContainer.count(scene) == 0)
+        #if defined(GD_IDE_ONLY)
+        if(m_gameArrayContainer.count(game) == 0)
             return;
 
-        m_sceneContainer[scene].m_3dArrays.clear();
-        m_sceneContainer[scene].m_mapArrays.clear();
+        m_gameArrayContainer[game].m_3dArrays.clear();
+        m_gameArrayContainer[game].m_mapArrays.clear();
+        #endif
     }
 
-    inline Array3D& GetArray3D(RuntimeScene *scene, const std::string &name)
+    inline Array3D& GetArray3D(Game *game, const std::string &name)
     {
-        return m_sceneContainer[scene].m_3dArrays[name];
+        return m_gameArrayContainer[game].m_3dArrays[name];
     }
 
-    inline ArrayMap& GetArrayMap(RuntimeScene *scene, const std::string &name)
+    inline ArrayMap& GetArrayMap(Game *game, const std::string &name)
     {
-        return m_sceneContainer[scene].m_mapArrays[name];
+        return m_gameArrayContainer[game].m_mapArrays[name];
     }
 
     private:
         static ArrayManager *_singleton;
 
-        std::map<RuntimeScene*, ArraysContainer> m_sceneContainer;
+        std::map<Game*, ArraysContainer> m_gameArrayContainer;
     };
 
 }

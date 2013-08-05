@@ -99,7 +99,7 @@ public:
             parser.ParseStringExpression(codeGenerator.GetPlatform(), codeGenerator.GetProject(), codeGenerator.GetLayout(), callbacks);
             if (arrayNameExpr.empty()) arrayNameExpr = "\"\""; //If generation failed, we make sure output code is not empty.
 
-            code += "arr::Array3D &currentArray = arr::ArrayManager::getInstance()->GetArray3D(runtimeContext->scene, " + arrayNameExpr + ");\n";
+            code += "arr::Array3D &currentArray = arr::ArrayManager::getInstance()->GetArray3D(runtimeContext->scene->game, " + arrayNameExpr + ");\n";
             code += "int arr_currentX;\n";
             code += "int arr_currentY;\n";
             code += "int arr_currentZ;\n";
