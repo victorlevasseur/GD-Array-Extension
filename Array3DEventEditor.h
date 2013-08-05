@@ -9,6 +9,7 @@
 #include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
+#include <wx/bmpbuttn.h>
 #include <wx/button.h>
 #include <wx/dialog.h>
 //*)
@@ -24,6 +25,7 @@ class Array3DEventEditor: public wxDialog
 		wxStaticText* StaticText1;
 		wxButton* cancelBt;
 		wxTextCtrl* arrayNameTextCtrl;
+		wxBitmapButton* editStrBt;
 		wxButton* okBt;
 		//*)
 
@@ -32,6 +34,7 @@ class Array3DEventEditor: public wxDialog
 		//(*Identifiers(Array3DEventEditor)
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL1;
+		static const long ID_BITMAPBUTTON1;
 		static const long ID_BUTTON1;
 		static const long ID_BUTTON2;
 		//*)
@@ -41,6 +44,7 @@ class Array3DEventEditor: public wxDialog
 		//(*Handlers(Array3DEventEditor)
 		void OnokBtClick(wxCommandEvent& event);
 		void OncancelBtClick(wxCommandEvent& event);
+		void OneditStrBtClick(wxCommandEvent& event);
 		//*)
 
 		arr::vec::Array3DEvent & eventEdited;

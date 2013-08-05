@@ -76,17 +76,42 @@
                             <Parametre value="" />
                         </Action>
                     </Actions>
+                    <Events>
+                        <Event disabled="false" folded="false" name='&quot;test&quot;'>
+                            <Type value="Array::Array3DIterate" />
+                            <Conditions />
+                            <Actions>
+                                <Action>
+                                    <Type value="Array::3D_SetValueAsNumber" />
+                                    <Parametre value='&quot;test&quot;' />
+                                    <Parametre value="Array::3D::CurrentX()" />
+                                    <Parametre value="Array::3D::CurrentY()" />
+                                    <Parametre value="Array::3D::CurrentZ()" />
+                                    <Parametre value="=" />
+                                    <Parametre value="Random(100)" />
+                                    <Parametre value="" />
+                                </Action>
+                            </Actions>
+                        </Event>
+                    </Events>
                 </Event>
                 <Event disabled="false" folded="false" name='&quot;test&quot;'>
                     <Type value="Array::Array3DIterate" />
-                    <Conditions />
+                    <Conditions>
+                        <Condition>
+                            <Type value="Egal" Contraire="false" />
+                            <Parametre value="Array::3D::CurrentZ()" />
+                            <Parametre value="=" />
+                            <Parametre value="2" />
+                        </Condition>
+                    </Conditions>
                     <Actions>
                         <Action>
                             <Type value="EcrireTexte" />
                             <Parametre value="" />
-                            <Parametre value="ToString(Array::3D::CurrentX())" />
-                            <Parametre value="10" />
-                            <Parametre value="10" />
+                            <Parametre value="Array::3D::Current()" />
+                            <Parametre value="Array::3D::CurrentX() * 60" />
+                            <Parametre value="Array::3D::CurrentY() * 60" />
                             <Parametre value='&quot;0;0;0&quot;' />
                             <Parametre value="20" />
                             <Parametre value="" />

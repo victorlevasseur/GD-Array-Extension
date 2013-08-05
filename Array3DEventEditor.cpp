@@ -2,6 +2,8 @@
 
 #if defined(GD_IDE_ONLY)
 
+#include "GDCore/IDE/CommonBitmapManager.h"
+#include "GDCore/IDE/Dialogs/EditStrExpressionDialog.h"
 #include "GDCpp/CommonTools.h"
 
 //(*InternalHeaders(Array3DEventEditor)
@@ -12,6 +14,7 @@
 //(*IdInit(Array3DEventEditor)
 const long Array3DEventEditor::ID_STATICTEXT1 = wxNewId();
 const long Array3DEventEditor::ID_TEXTCTRL1 = wxNewId();
+const long Array3DEventEditor::ID_BITMAPBUTTON1 = wxNewId();
 const long Array3DEventEditor::ID_BUTTON1 = wxNewId();
 const long Array3DEventEditor::ID_BUTTON2 = wxNewId();
 //*)
@@ -36,6 +39,9 @@ Array3DEventEditor::Array3DEventEditor(wxWindow* parent, arr::vec::Array3DEvent 
 	FlexGridSizer2->Add(StaticText1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	arrayNameTextCtrl = new wxTextCtrl(this, ID_TEXTCTRL1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
 	FlexGridSizer2->Add(arrayNameTextCtrl, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	editStrBt = new wxBitmapButton(this, ID_BITMAPBUTTON1, wxNullBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON1"));
+	editStrBt->SetDefault();
+	FlexGridSizer2->Add(editStrBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer1->Add(FlexGridSizer2, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer3 = new wxFlexGridSizer(0, 2, 0, 0);
 	okBt = new wxButton(this, ID_BUTTON1, _("Ok"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
@@ -47,11 +53,13 @@ Array3DEventEditor::Array3DEventEditor(wxWindow* parent, arr::vec::Array3DEvent 
 	FlexGridSizer1->Fit(this);
 	FlexGridSizer1->SetSizeHints(this);
 
+	Connect(ID_BITMAPBUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Array3DEventEditor::OneditStrBtClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Array3DEventEditor::OnokBtClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Array3DEventEditor::OncancelBtClick);
 	//*)
 
 	arrayNameTextCtrl->SetValue(eventEdited.GetArrayName().c_str());
+	editStrBt->SetBitmap(gd::CommonBitmapManager::GetInstance()->texteBt);
 }
 
 Array3DEventEditor::~Array3DEventEditor()
@@ -72,4 +80,15 @@ void Array3DEventEditor::OncancelBtClick(wxCommandEvent& event)
     EndModal(0);
 }
 
+void Array3DEventEditor::OneditStrBtClick(wxCommandEvent& event)
+{
+    gd::EditStrExpressionDialog dialog(this, ToString(arrayNameTextCtrl->GetValue()), game, scene);
+
+    if(dialog.ShowModal() != 0)
+    {
+        arrayNameTextCtrl->SetValue(dialog.GetExpression().c_str());
+    }
+}
+
 #endif
+
