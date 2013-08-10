@@ -18,7 +18,7 @@ class Array3DEventEditor: public wxDialog
 {
 	public:
 
-		Array3DEventEditor(wxWindow* parent, arr::vec::Array3DEvent & event_, gd::Project & game_, gd::Layout & scene_);
+		Array3DEventEditor(wxWindow* parent, arr::threeDim::Array3DEvent & event_, gd::Project & game_, gd::Layout & scene_);
 		virtual ~Array3DEventEditor();
 
 		//(*Declarations(Array3DEventEditor)
@@ -47,7 +47,7 @@ class Array3DEventEditor: public wxDialog
 		void OneditStrBtClick(wxCommandEvent& event);
 		//*)
 
-		arr::vec::Array3DEvent & eventEdited;
+		arr::threeDim::Array3DEvent & eventEdited;
 		gd::Project & game;
 		gd::Layout & scene;
 

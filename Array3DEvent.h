@@ -23,7 +23,7 @@ class wxWindow;
 namespace arr
 {
 
-namespace vec
+namespace threeDim
 {
 
 class GD_EXTENSION_API Array3DEvent : public gd::BaseEvent
@@ -82,7 +82,7 @@ public:
     {
         virtual std::string Generate(gd::BaseEvent & event_, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext &context)
         {
-            arr::vec::Array3DEvent &event = dynamic_cast<arr::vec::Array3DEvent&>(event_);
+            arr::threeDim::Array3DEvent &event = dynamic_cast<arr::threeDim::Array3DEvent&>(event_);
 
             std::string eventId = ToString(static_cast<void*>(&event));
 

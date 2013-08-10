@@ -67,9 +67,9 @@ public:
             .AddParameter("expression", _("Value"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::SetValueAsNumber")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::SetValueAsNumber")
                                  .SetManipulatedType("number")
-                                 .SetAssociatedGetter("arr::vec::GetValueAsNumber")
+                                 .SetAssociatedGetter("arr::threeDim::GetValueAsNumber")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
         AddCondition("3D_TestValueAsNumber",
@@ -88,7 +88,7 @@ public:
             .AddParameter("expression", _("Value"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::GetValueAsNumber")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetValueAsNumber")
                                  .SetManipulatedType("number")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
@@ -100,7 +100,7 @@ public:
             .AddParameter("expression", _("Z index"), "", true)
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::GetValueAsNumber").SetIncludeFile("Array/Array3DTools.h");
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetValueAsNumber").SetIncludeFile("Array/Array3DTools.h");
 
         /// Text at an index
 
@@ -120,9 +120,9 @@ public:
             .AddParameter("string", _("Text"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::SetValueAsString")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::SetValueAsString")
                                  .SetManipulatedType("string")
-                                 .SetAssociatedGetter("arr::vec::GetValueAsString")
+                                 .SetAssociatedGetter("arr::threeDim::GetValueAsString")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
         AddCondition("3D_TestValueAsText",
@@ -141,7 +141,7 @@ public:
             .AddParameter("string", _("Text"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::GetValueAsString")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetValueAsString")
                                  .SetManipulatedType("string")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
@@ -153,7 +153,7 @@ public:
             .AddParameter("expression", _("Z index"), "", true)
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::GetValueAsString").SetIncludeFile("Array/Array3DTools.h");
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetValueAsString").SetIncludeFile("Array/Array3DTools.h");
 
         /// Insert a value (number or text)
 
@@ -171,7 +171,7 @@ public:
             .AddParameter("expression", _("Value"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::InsertValueAsNumber")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::InsertValueAsNumber")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
         AddAction("3D_InsertValueAsText",
@@ -188,7 +188,7 @@ public:
             .AddParameter("string", _("Text"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::InsertValueAsString")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::InsertValueAsString")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
         /// Remove a value
@@ -206,7 +206,7 @@ public:
             .AddParameter("expression", _("Index in that axis"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::RemoveValue")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::RemoveValue")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
         /// Set size
@@ -225,7 +225,7 @@ public:
             .AddParameter("expression", _("Depth (size on Z)"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::SetSize")
+            .codeExtraInformation.SetFunctionName("arr::threeDim::SetSize")
                                  .SetIncludeFile("Array/Array3DTools.h");
 
         /// Get width, height, depth
@@ -235,33 +235,33 @@ public:
             .AddParameter("string", _("Array Name"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::GetWidth").SetIncludeFile("Array/Array3DTools.h");
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetWidth").SetIncludeFile("Array/Array3DTools.h");
 
         AddExpression("3D::Height", _("Height of an array"), _("Height of an array"), _("3D Array"), "res/actions/rotate.png")
 
             .AddParameter("string", _("Array Name"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::GetHeight").SetIncludeFile("Array/Array3DTools.h");
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetHeight").SetIncludeFile("Array/Array3DTools.h");
 
         AddExpression("3D::Depth", _("Depth of an array"), _("Depth of an array"), _("3D Array"), "res/actions/rotate.png")
 
             .AddParameter("string", _("Array Name"))
             .AddCodeOnlyParameter("currentScene", "")
 
-            .codeExtraInformation.SetFunctionName("arr::vec::GetDepth").SetIncludeFile("Array/Array3DTools.h");
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetDepth").SetIncludeFile("Array/Array3DTools.h");
 
         /// Iterate event
 
         {
-            gd::EventMetadata::CodeGenerator * arr3DCodeGen = new arr::vec::Array3DEvent::CodeGenerator;
+            gd::EventMetadata::CodeGenerator * arr3DCodeGen = new arr::threeDim::Array3DEvent::CodeGenerator;
 
             AddEvent("Array3DIterate",
                     _("Iterate in a 3D Array"),
                     _("Execute the event for each values contained in a 3D Array. You can access the value and its index by using dedicated expressions"),
                     "",
                     "res/function.png",
-                    boost::shared_ptr<gd::BaseEvent>(new arr::vec::Array3DEvent))
+                    boost::shared_ptr<gd::BaseEvent>(new arr::threeDim::Array3DEvent))
                         .SetCodeGenerator(boost::shared_ptr<gd::EventMetadata::CodeGenerator>(arr3DCodeGen));
         }
 

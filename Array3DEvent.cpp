@@ -21,7 +21,7 @@ namespace gd { class Project; }
 namespace arr
 {
 
-namespace vec
+namespace threeDim
 {
 
 Array3DEvent::Array3DEvent() : gd::BaseEvent(), arrayName("")

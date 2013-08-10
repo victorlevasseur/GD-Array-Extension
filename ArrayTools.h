@@ -61,7 +61,7 @@ namespace arr
 
         m_gameArrayContainer[game].m_3dArrays.clear();
         m_gameArrayContainer[game].m_mapArrays.clear();
-        m_array3dEventInfos[game] = vec::Array3DEventInfoManager();
+        m_array3dEventInfos[game] = threeDim::Array3DEventInfoManager();
         #endif
     }
 
@@ -75,7 +75,7 @@ namespace arr
         return m_gameArrayContainer[game].m_mapArrays[name];
     }
 
-    inline vec::Array3DEventInfoManager& GetArray3DEventInfo(Game *game)
+    inline threeDim::Array3DEventInfoManager& GetArray3DEventInfo(Game *game)
     {
         return m_array3dEventInfos[game];
     }
@@ -84,7 +84,7 @@ namespace arr
         static ArrayManager *_singleton;
 
         std::map<Game*, ArraysContainer> m_gameArrayContainer;
-        std::map<Game*, vec::Array3DEventInfoManager> m_array3dEventInfos;
+        std::map<Game*, threeDim::Array3DEventInfoManager> m_array3dEventInfos;
     };
 
 }

@@ -9,7 +9,7 @@
 namespace arr
 {
 
-namespace vec
+namespace threeDim
 {
 
 struct GD_EXTENSION_API Array3DEventInfo

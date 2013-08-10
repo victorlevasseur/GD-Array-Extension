@@ -569,6 +569,8 @@
 		<Unit filename="Array3DEvent.h" />
 		<Unit filename="Array3DEventEditor.cpp" />
 		<Unit filename="Array3DEventEditor.h" />
+		<Unit filename="Array3DEventInfo.cpp" />
+		<Unit filename="Array3DEventInfo.h" />
 		<Unit filename="Array3DTools.cpp" />
 		<Unit filename="Array3DTools.h" />
 		<Unit filename="ArrayMap.h" />

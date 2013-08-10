@@ -24,7 +24,7 @@ BEGIN_EVENT_TABLE(Array3DEventEditor,wxDialog)
 	//*)
 END_EVENT_TABLE()
 
-Array3DEventEditor::Array3DEventEditor(wxWindow* parent, arr::vec::Array3DEvent & event_, gd::Project & game_, gd::Layout & scene_)
+Array3DEventEditor::Array3DEventEditor(wxWindow* parent, arr::threeDim::Array3DEvent & event_, gd::Project & game_, gd::Layout & scene_)
 : eventEdited(event_), game(game_), scene(scene_)
 {
 	//(*Initialize(Array3DEventEditor)

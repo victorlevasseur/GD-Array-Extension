@@ -3,7 +3,7 @@
 namespace arr
 {
 
-namespace vec
+namespace threeDim
 {
 
 Array3DEventInfoManager::Array3DEventInfoManager()
