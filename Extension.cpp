@@ -270,9 +270,10 @@ public:
             {
                 virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
                 {
+                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
                     codeGenerator.AddIncludeFile("Array/ArrayValue.h");
 
-                    std::string code = "arr_currentX";
+                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().currentX";
 
                     return code;
                 };
@@ -293,9 +294,10 @@ public:
             {
                 virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
                 {
+                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
                     codeGenerator.AddIncludeFile("Array/ArrayValue.h");
 
-                    std::string code = "arr_currentY";
+                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().currentY";
 
                     return code;
                 };
@@ -316,9 +318,10 @@ public:
             {
                 virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
                 {
+                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
                     codeGenerator.AddIncludeFile("Array/ArrayValue.h");
 
-                    std::string code = "arr_currentZ";
+                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().currentZ";
 
                     return code;
                 };
@@ -339,9 +342,10 @@ public:
             {
                 virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
                 {
+                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
                     codeGenerator.AddIncludeFile("Array/ArrayValue.h");
 
-                    std::string code = "arr_current.GetAsNumber()";
+                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().current.GetAsNumber()";
 
                     return code;
                 };
@@ -362,9 +366,10 @@ public:
             {
                 virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
                 {
+                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
                     codeGenerator.AddIncludeFile("Array/ArrayValue.h");
 
-                    std::string code = "arr_current.GetAsText()";
+                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().current.GetAsText()";
 
                     return code;
                 };

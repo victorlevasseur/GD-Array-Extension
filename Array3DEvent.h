@@ -84,6 +84,8 @@ public:
         {
             arr::vec::Array3DEvent &event = dynamic_cast<arr::vec::Array3DEvent&>(event_);
 
+            std::string eventId = ToString(static_cast<void*>(&event));
+
             // Adding needed includes
             codeGenerator.AddIncludeFile("stack");
             codeGenerator.AddIncludeFile("Array/ArrayValue.h");
@@ -100,23 +102,17 @@ public:
             if (arrayNameExpr.empty()) arrayNameExpr = "\"\""; //If generation failed, we make sure output code is not empty.
 
             code += "arr::Array3D &currentArray = arr::ArrayManager::GetInstance()->GetArray3D(runtimeContext->scene->game, " + arrayNameExpr + ");\n";
-            code += "int arr_currentX;\n";
-            code += "int arr_currentY;\n";
-            code += "int arr_currentZ;\n";
-            code += "arr::Value arr_current;\n";
             code += "for(unsigned int x = 0; x < currentArray.GetSize(1); x++)\n";
             code += "{\n";
             {
-                code += "arr_currentX = x;\n";
                 code += "for(unsigned int y = 0; y < currentArray.GetSize(2); y++)\n";
                 code += "{\n";
                 {
-                    code += "arr_currentY = y;\n";
                     code += "for(unsigned int z = 0; z < currentArray.GetSize(3); z++)\n";
                     code += "{\n";
                     {
-                        code += "arr_currentZ = z;\n";
-                        code += "arr_current = currentArray.GetValue(x, y, z);";
+
+                        code += "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).PushNewEventInfo(x, y, z, currentArray.GetValue(x, y, z));";
 
                         // Generating condition/action/sub-event //
                         code += codeGenerator.GenerateConditionsListCode(event.GetConditions(), context);
@@ -143,6 +139,8 @@ public:
 
                         code += "}\n";
                         ///////////////////////////////////////////
+
+                        code += "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).PopEventInfo();";
                     }
                     code += "}\n";
                 }

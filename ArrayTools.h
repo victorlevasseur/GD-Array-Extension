@@ -11,6 +11,7 @@
 #include "ArrayValue.h"
 #include "Array3D.h"
 #include "ArrayMap.h"
+#include "Array3DEventInfo.h"
 
 typedef std::string ArrayNameType;
 
@@ -22,15 +23,6 @@ namespace arr
     {
         std::map<ArrayNameType, Array3D> m_3dArrays;
         std::map<ArrayNameType, ArrayMap> m_mapArrays;
-    };
-
-    struct Array3DEventInfo
-    {
-        int currentX;
-        int currentY;
-        int currentZ;
-
-        Value current;
     };
 
     class GD_EXTENSION_API ArrayManager
@@ -69,6 +61,7 @@ namespace arr
 
         m_gameArrayContainer[game].m_3dArrays.clear();
         m_gameArrayContainer[game].m_mapArrays.clear();
+        m_array3dEventInfos[game] = vec::Array3DEventInfoManager();
         #endif
     }
 
@@ -82,10 +75,16 @@ namespace arr
         return m_gameArrayContainer[game].m_mapArrays[name];
     }
 
+    inline vec::Array3DEventInfoManager& GetArray3DEventInfo(Game *game)
+    {
+        return m_array3dEventInfos[game];
+    }
+
     private:
         static ArrayManager *_singleton;
 
         std::map<Game*, ArraysContainer> m_gameArrayContainer;
+        std::map<Game*, vec::Array3DEventInfoManager> m_array3dEventInfos;
     };
 
 }
