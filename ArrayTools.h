@@ -24,6 +24,15 @@ namespace arr
         std::map<ArrayNameType, ArrayMap> m_mapArrays;
     };
 
+    struct Array3DEventInfo
+    {
+        int currentX;
+        int currentY;
+        int currentZ;
+
+        Value current;
+    };
+
     class GD_EXTENSION_API ArrayManager
     {
     private:
@@ -33,7 +42,7 @@ namespace arr
 
     public:
 
-    static ArrayManager *getInstance ()
+    static ArrayManager *GetInstance()
     {
         if (NULL == _singleton)
         {
@@ -43,7 +52,7 @@ namespace arr
         return _singleton;
     }
 
-    static void kill ()
+    static void Kill()
     {
         if (NULL != _singleton)
         {
