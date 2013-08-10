@@ -11,6 +11,7 @@
 #include "GDCore/Events/Instruction.h"
 #endif // defined
 
+#include "ArrayTools.h"
 #include "Array3DEvent.h"
 
 /**
