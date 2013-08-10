@@ -175,6 +175,14 @@ ENDIF(WIN32)
 get_target_property(Extension_suffix Array SUFFIX)
 
 add_custom_command(TARGET Array POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E remove
+		"${GD_base_dir}/Binaries/Output/${CMAKE_BUILD_TYPE}/JsPlatform/Extensions/Array${Extension_suffix}")
+
+add_custom_command(TARGET Array POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E remove_directory
+		"${GD_base_dir}/Binaries/Output/${CMAKE_BUILD_TYPE}/CppPlatform/Extensions/include/Array")
+
+add_custom_command(TARGET Array POST_BUILD
 	COMMAND ${CMAKE_COMMAND} -E copy
 		"${GD_base_dir}/Binaries/Output/${CMAKE_BUILD_TYPE}/CppPlatform/Extensions/Array${Extension_suffix}"
 		"${GD_base_dir}/Binaries/Output/${CMAKE_BUILD_TYPE}/JsPlatform/Extensions/Array${Extension_suffix}")

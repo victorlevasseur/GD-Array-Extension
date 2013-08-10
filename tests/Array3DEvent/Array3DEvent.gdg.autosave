@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <Project>
-    <GDVersion Major="3" Minor="1" Build="59" Revision="0" />
+    <GDVersion Major="3" Minor="1" Build="61" Revision="0" />
     <Info winExecutableFilename="" winExecutableIconFile="" linuxExecutableFilename="" macExecutableFilename="" useExternalSourceFiles="false">
         <Nom value="Project" />
         <Auteur value="" />
@@ -93,6 +93,22 @@
                                     <Parametre value="Array::3D::CurrentZ()" />
                                     <Parametre value="=" />
                                     <Parametre value="Random(100)" />
+                                    <Parametre value="" />
+                                </Action>
+                            </Actions>
+                        </Event>
+                        <Event disabled="false" folded="false">
+                            <Type value="BuiltinCommonInstructions::Standard" />
+                            <Conditions />
+                            <Actions>
+                                <Action>
+                                    <Type value="Array::3D_SetValueAsNumber" />
+                                    <Parametre value='&quot;test&quot;' />
+                                    <Parametre value="2" />
+                                    <Parametre value="2" />
+                                    <Parametre value="2" />
+                                    <Parametre value="=" />
+                                    <Parametre value="10" />
                                     <Parametre value="" />
                                 </Action>
                             </Actions>

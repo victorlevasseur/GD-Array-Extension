@@ -7,7 +7,7 @@
 namespace arr
 {
 
-namespace vec
+namespace threeDim
 {
 
 double GetValueAsNumber(const std::string &name, int d1, int d2, int d3, RuntimeScene &scene)
