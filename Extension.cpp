@@ -166,7 +166,7 @@ public:
                        "CppPlatform/Extensions/AESicon16.png")
 
             .AddParameter("string", _("Array Name"))
-            .AddParameter("string", _("Dimension (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
+            .AddParameter("string", _("Axis (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
             .AddParameter("expression", _("Index in that axis"))
             .AddParameter("expression", _("Value"))
             .AddCodeOnlyParameter("currentScene", "")
@@ -183,7 +183,7 @@ public:
                        "CppPlatform/Extensions/AESicon16.png")
 
             .AddParameter("string", _("Array Name"))
-            .AddParameter("string", _("Dimension (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
+            .AddParameter("string", _("Axis (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
             .AddParameter("expression", _("Index in that axis"))
             .AddParameter("string", _("Text"))
             .AddCodeOnlyParameter("currentScene", "")
@@ -202,7 +202,7 @@ public:
                        "CppPlatform/Extensions/AESicon16.png")
 
             .AddParameter("string", _("Array Name"))
-            .AddParameter("string", _("Dimension (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
+            .AddParameter("string", _("Axis (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
             .AddParameter("expression", _("Index in that axis"))
             .AddCodeOnlyParameter("currentScene", "")
 
