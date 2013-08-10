@@ -53,7 +53,7 @@ public:
         AddAction("3D_SetValueAsNumber",
                        _("Set a value"),
                        _("Set a value as a number at a specific index."),
-                       _("Do _PARAM4__PARAM5_ to the value at [_PARAM1_;_PARAM2_;_PARAM3_] of _PARAM0_"),
+                       _("Do _PARAM4__PARAM5_ to the value of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_]"),
                        _("3D Array"),
                        "CppPlatform/Extensions/AESicon24.png",
                        "CppPlatform/Extensions/AESicon16.png")
@@ -74,7 +74,7 @@ public:
         AddCondition("3D_TestValueAsNumber",
                        _("Value at an index"),
                        _("Test the value (as number) at a specific index."),
-                       _("The value at [_PARAM1_;_PARAM2_;_PARAM3_] of _PARAM0_ is _PARAM4__PARAM5_"),
+                       _("The value of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] is _PARAM4__PARAM5_"),
                        _("3D Array"),
                        "CppPlatform/Extensions/AESicon24.png",
                        "CppPlatform/Extensions/AESicon16.png")
@@ -106,7 +106,7 @@ public:
         AddAction("3D_SetValueAsText",
                        _("Set a text"),
                        _("Set a text at a specific index."),
-                       _("Do _PARAM4__PARAM5_ to the text at [_PARAM1_;_PARAM2_;_PARAM3_] of _PARAM0_"),
+                       _("Do _PARAM4__PARAM5_ to the text of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_]"),
                        _("3D Array"),
                        "CppPlatform/Extensions/AESicon24.png",
                        "CppPlatform/Extensions/AESicon16.png")
@@ -127,7 +127,7 @@ public:
         AddCondition("3D_TestValueAsText",
                        _("Text at an index"),
                        _("Test the text at a specific index."),
-                       _("The text at [_PARAM1_;_PARAM2_;_PARAM3_] of _PARAM0_ is _PARAM4__PARAM5_"),
+                       _("The text of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] is _PARAM4__PARAM5_"),
                        _("3D Array"),
                        "CppPlatform/Extensions/AESicon24.png",
                        "CppPlatform/Extensions/AESicon16.png")

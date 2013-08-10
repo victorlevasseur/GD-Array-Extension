@@ -186,3 +186,8 @@ foreach(header_file ${header_files})
 			"${PROJECT_SOURCE_DIR}/${header_file}"
 			"${GD_base_dir}/Binaries/Output/${CMAKE_BUILD_TYPE}/CppPlatform/Extensions/include/Array/${header_file}")
 endforeach()
+
+add_custom_command(TARGET Array POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy
+		"${PROJECT_SOURCE_DIR}/translations/Array.mo"
+		"${GD_base_dir}/Binaries/Output/${CMAKE_BUILD_TYPE}/locale/fr_FR/Array.mo")

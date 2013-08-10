@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Array Extension\n"
+"POT-Creation-Date: 2013-08-09 18:50+0100\n"
+"PO-Revision-Date: 2013-08-09 18:51+0100\n"
+"Last-Translator: Victor Levasseur <victorlevasseur01@orange.fr>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../Array3DEvent.cpp:119
+msgid "Iterate through "
+msgstr "Parcourir le tableau "
+
+#: ../Array3DEvent.cpp:119
+msgid "(Not defined)"
+msgstr "(Non défini)"
+
+#: ../Array3DEvent.cpp:119
+msgid " on XYZ"
+msgstr " sur XYZ"
+
+#: ../Array3DEventEditor.cpp:48
+msgid "Edit \"Iterate through an array\" event"
+msgstr "Editer l'événement \"Parcourir un tableau\""
+
+#: ../Array3DEventEditor.cpp:54
+msgid "Array's name :"
+msgstr "Nom du tableau :"
+
+#: ../Array3DEventEditor.cpp:72
+msgid "Ok"
+msgstr "Ok"
+
+#: ../Array3DEventEditor.cpp:76
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../Extension.cpp:29 ../Extension.cpp:42 ../JsExtension.cpp:27
+msgid "Array"
+msgstr "Tableau"
+
+#: ../Extension.cpp:30 ../JsExtension.cpp:28
+msgid "Extension to store values and text inside arrays."
+msgstr "Extension pour stocker des valeurs et textes dans des tableaux"
+
+#: ../Extension.cpp:39
+msgid "Initialize"
+msgstr "Initialiser"
+
+#: ../Extension.cpp:40
+msgid ""
+"Initialize the scene's arrays.\n"
+"This action need to be executed at the beginning of the scene before any "
+"actions related to the arrays."
+msgstr ""
+"Initialise l'extension Tableau.\n"
+"Cette action doit être exécutée au lancement de la scène avant toutes les "
+"actions liées aux tableaux."
+
+#: ../Extension.cpp:41
+msgid "Initialize arrays"
+msgstr "Initialiser les tableaux"
+
+#: ../Extension.cpp:54
+msgid "Set a value"
+msgstr "Affecter une valeur"
+
+#: ../Extension.cpp:55
+msgid "Set a value as a number at a specific index."
+msgstr "Affecter une valeur (un nombre) à un indice."
+
+#: ../Extension.cpp:56
+msgid ""
+"Do _PARAM4__PARAM5_ to the value of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_]"
+msgstr ""
+"Faire _PARAM4__PARAM5_ à la valeur de _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] "
+
+#: ../Extension.cpp:57 ../Extension.cpp:78 ../Extension.cpp:94
+#: ../Extension.cpp:110 ../Extension.cpp:131 ../Extension.cpp:147
+#: ../Extension.cpp:163 ../Extension.cpp:180 ../Extension.cpp:199
+#: ../Extension.cpp:217 ../Extension.cpp:232 ../Extension.cpp:239
+#: ../Extension.cpp:246 ../Extension.cpp:285 ../Extension.cpp:308
+#: ../Extension.cpp:331 ../Extension.cpp:354 ../Extension.cpp:377
+msgid "3D Array"
+msgstr "Tableau 3D"
+
+#: ../Extension.cpp:61 ../Extension.cpp:82 ../Extension.cpp:96
+#: ../Extension.cpp:114 ../Extension.cpp:135 ../Extension.cpp:149
+#: ../Extension.cpp:167 ../Extension.cpp:184 ../Extension.cpp:203
+#: ../Extension.cpp:221 ../Extension.cpp:234 ../Extension.cpp:241
+#: ../Extension.cpp:248
+msgid "Array Name"
+msgstr "Nom du tableau"
+
+#: ../Extension.cpp:62 ../Extension.cpp:83 ../Extension.cpp:97
+#: ../Extension.cpp:115 ../Extension.cpp:136 ../Extension.cpp:150
+msgid "X index"
+msgstr "Indice sur X"
+
+#: ../Extension.cpp:63 ../Extension.cpp:84 ../Extension.cpp:98
+#: ../Extension.cpp:116 ../Extension.cpp:137 ../Extension.cpp:151
+msgid "Y index"
+msgstr "Indice sur Y"
+
+#: ../Extension.cpp:64 ../Extension.cpp:85 ../Extension.cpp:99
+#: ../Extension.cpp:117 ../Extension.cpp:138 ../Extension.cpp:152
+msgid "Z index"
+msgstr "Indice sur Z"
+
+#: ../Extension.cpp:65 ../Extension.cpp:118
+msgid "Modification's sign"
+msgstr "Signe de modification"
+
+#: ../Extension.cpp:66 ../Extension.cpp:87 ../Extension.cpp:170
+msgid "Value"
+msgstr "Valeur"
+
+#: ../Extension.cpp:75 ../Extension.cpp:94
+msgid "Value at an index"
+msgstr "Valeur à un indice"
+
+#: ../Extension.cpp:76
+msgid "Test the value (as number) at a specific index."
+msgstr "Tester la valeur (nombre) stockée à un indice."
+
+#: ../Extension.cpp:77
+msgid "The value of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] is _PARAM4__PARAM5_"
+msgstr "La valeur de _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] est _PARAM4__PARAM5_"
+
+#: ../Extension.cpp:86 ../Extension.cpp:139
+msgid "Comparison's sign"
+msgstr "Signe de comparaison"
+
+#: ../Extension.cpp:107
+msgid "Set a text"
+msgstr "Affecter un texte"
+
+#: ../Extension.cpp:108
+msgid "Set a text at a specific index."
+msgstr "Affecter un texte à un indice."
+
+#: ../Extension.cpp:109
+msgid "Do _PARAM4__PARAM5_ to the text of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_]"
+msgstr ""
+"Faire _PARAM4__PARAM5_ au texte de _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_]"
+
+#: ../Extension.cpp:119 ../Extension.cpp:140 ../Extension.cpp:187
+msgid "Text"
+msgstr ""
+
+#: ../Extension.cpp:128 ../Extension.cpp:147
+msgid "Text at an index"
+msgstr ""
+
+#: ../Extension.cpp:129
+msgid "Test the text at a specific index."
+msgstr ""
+
+#: ../Extension.cpp:130
+msgid "The text of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] is _PARAM4__PARAM5_"
+msgstr "La valeur de _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] est _PARAM4__PARAM5_"
+
+#: ../Extension.cpp:160
+msgid "Insert a value"
+msgstr ""
+
+#: ../Extension.cpp:161
+msgid "Insert a value (number) at a specific position."
+msgstr ""
+
+#: ../Extension.cpp:162 ../Extension.cpp:179
+msgid "Insert _PARAM3_ at the index _PARAM2_ in the axis _PARAM1_ of _PARAM0_"
+msgstr ""
+
+#: ../Extension.cpp:168 ../Extension.cpp:185 ../Extension.cpp:204
+msgid "Dimension (\"X\", \"Y\" or \"Z\")"
+msgstr ""
+
+#: ../Extension.cpp:169 ../Extension.cpp:186 ../Extension.cpp:205
+msgid "Index in that axis"
+msgstr ""
+
+#: ../Extension.cpp:177
+msgid "Insert a text"
+msgstr ""
+
+#: ../Extension.cpp:178
+msgid "Insert a text at a specific position."
+msgstr ""
+
+#: ../Extension.cpp:196
+msgid "Remove an index"
+msgstr ""
+
+#: ../Extension.cpp:197
+msgid "Remove an index from the array."
+msgstr ""
+
+#: ../Extension.cpp:198
+msgid "Remove the index _PARAM2_ in the axis _PARAM1_ of _PARAM0_"
+msgstr ""
+
+#: ../Extension.cpp:214
+msgid "Set size"
+msgstr ""
+
+#: ../Extension.cpp:215
+msgid ""
+"Set the size of an array.\n"
+"This action is needed to create the array, otherwise the array is empty "
+"(size of 0 on X, Y and Z)."
+msgstr ""
+
+#: ../Extension.cpp:216
+msgid "Set the size of _PARAM0_ to _PARAM1_;_PARAM2_;_PARAM3_"
+msgstr ""
+
+#: ../Extension.cpp:222
+msgid "Width (size on X)"
+msgstr ""
+
+#: ../Extension.cpp:223
+msgid "Height (size on Y)"
+msgstr ""
+
+#: ../Extension.cpp:224
+msgid "Depth (size on Z)"
+msgstr ""
+
+#: ../Extension.cpp:232
+msgid "Width of an array"
+msgstr ""
+
+#: ../Extension.cpp:239
+msgid "Height of an array"
+msgstr ""
+
+#: ../Extension.cpp:246
+msgid "Depth of an array"
+msgstr ""
+
+#: ../Extension.cpp:259
+msgid "Iterate in a 3D Array"
+msgstr ""
+
+#: ../Extension.cpp:260
+msgid ""
+"Execute the event for each values contained in a 3D Array. You can access "
+"the value and its index by using dedicated expressions"
+msgstr ""
+
+#: ../Extension.cpp:283
+msgid "Current X position in array"
+msgstr ""
+
+#: ../Extension.cpp:284
+msgid ""
+"Return the current X position in the array (when you use the \"iterate "
+"through 3D array\" event"
+msgstr ""
+
+#: ../Extension.cpp:306
+msgid "Current Y position in array"
+msgstr ""
+
+#: ../Extension.cpp:307
+msgid ""
+"Return the current Y position in the array (when you use the \"iterate "
+"through 3D array\" event"
+msgstr ""
+
+#: ../Extension.cpp:329
+msgid "Current Z position in array"
+msgstr ""
+
+#: ../Extension.cpp:330
+msgid ""
+"Return the current Z position in the array (when you use the \"iterate "
+"through 3D array\" event"
+msgstr ""
+
+#: ../Extension.cpp:352
+msgid "Current value in array"
+msgstr ""
+
+#: ../Extension.cpp:353
+msgid ""
+"Return the current value as number in the array (when you use the \"iterate "
+"through 3D array\" event"
+msgstr ""
+
+#: ../Extension.cpp:375
+msgid "Current text in array"
+msgstr ""
+
+#: ../Extension.cpp:376
+msgid ""
+"Return the current value as text in the array (when you use the \"iterate "
+"through 3D array\" event"
+msgstr ""

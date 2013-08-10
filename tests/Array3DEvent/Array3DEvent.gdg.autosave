@@ -68,6 +68,10 @@
                     </Conditions>
                     <Actions>
                         <Action>
+                            <Type value="Array::Init" />
+                            <Parametre value="" />
+                        </Action>
+                        <Action>
                             <Type value="Array::3D_SetSize" />
                             <Parametre value='&quot;test&quot;' />
                             <Parametre value="5" />
