@@ -2,6 +2,7 @@
 <wxsmith>
 	<object class="wxDialog" name="Array3DEventEditor">
 		<title>Edit &quot;Iterate through an array&quot; event</title>
+		<size>323,86</size>
 		<id_arg>0</id_arg>
 		<object class="wxFlexGridSizer" variable="FlexGridSizer1" member="no">
 			<cols>1</cols>

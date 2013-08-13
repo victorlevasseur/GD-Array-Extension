@@ -1,3 +1,13 @@
+/*
+Copyright (c) 2013 Victor Levasseur <victorlevasseur01@orange.fr>
+
+This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.
+*/
+
 #include "Array3DEventEditor.h"
 
 #if defined(GD_IDE_ONLY)
@@ -33,6 +43,7 @@ Array3DEventEditor::Array3DEventEditor(wxWindow* parent, arr::threeDim::Array3DE
 	wxFlexGridSizer* FlexGridSizer1;
 
 	Create(parent, wxID_ANY, _("Edit \"Iterate through an array\" event"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
+	SetClientSize(wxSize(323,86));
 	FlexGridSizer1 = new wxFlexGridSizer(0, 1, 0, 0);
 	FlexGridSizer2 = new wxFlexGridSizer(0, 3, 0, 0);
 	StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Array\'s name :"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
@@ -50,8 +61,8 @@ Array3DEventEditor::Array3DEventEditor(wxWindow* parent, arr::threeDim::Array3DE
 	FlexGridSizer3->Add(cancelBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer1->Add(FlexGridSizer3, 1, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
 	SetSizer(FlexGridSizer1);
-	FlexGridSizer1->Fit(this);
-	FlexGridSizer1->SetSizeHints(this);
+	SetSizer(FlexGridSizer1);
+	Layout();
 
 	Connect(ID_BITMAPBUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Array3DEventEditor::OneditStrBtClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Array3DEventEditor::OnokBtClick);
