@@ -168,8 +168,8 @@ public:
 
         AddAction("3D_InsertValueAsNumber",
                        _("Insert a value"),
-                       _("Insert a value (number) at a specific position."),
-                       _("Insert _PARAM3_ at the index _PARAM2_ in the axis _PARAM1_ of _PARAM0_"),
+                       _("Insert a value (number) at a specific index."),
+                       _("Insert _PARAM3_ at the index _PARAM2_ on the axis _PARAM1_ of _PARAM0_"),
                        _("3D Array"),
                        "CppPlatform/Extensions/AESicon24.png",
                        "CppPlatform/Extensions/AESicon16.png")
@@ -185,8 +185,8 @@ public:
 
         AddAction("3D_InsertValueAsText",
                        _("Insert a text"),
-                       _("Insert a text at a specific position."),
-                       _("Insert _PARAM3_ at the index _PARAM2_ in the axis _PARAM1_ of _PARAM0_"),
+                       _("Insert a text at a specific index."),
+                       _("Insert _PARAM3_ at the index _PARAM2_ on the axis _PARAM1_ of _PARAM0_"),
                        _("3D Array"),
                        "CppPlatform/Extensions/AESicon24.png",
                        "CppPlatform/Extensions/AESicon16.png")
@@ -205,7 +205,7 @@ public:
         AddAction("3D_RemoveValue",
                        _("Remove an index"),
                        _("Remove an index from the array."),
-                       _("Remove the index _PARAM2_ in the axis _PARAM1_ of _PARAM0_"),
+                       _("Remove the index _PARAM2_ on the axis _PARAM1_ of _PARAM0_"),
                        _("3D Array"),
                        "CppPlatform/Extensions/AESicon24.png",
                        "CppPlatform/Extensions/AESicon16.png")
@@ -292,7 +292,7 @@ public:
 
             AddExpression("3D::CurrentX",
                            _("Current X position in array"),
-                           _("Return the current X position in the array (when you use the \"iterate through 3D array\" event"),
+                           _("Return the current X position in the array (when you use the \"iterate through 3D array\" event)"),
                            _("3D Array"),
                            "res/function.png")
                 .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
@@ -316,7 +316,7 @@ public:
 
             AddExpression("3D::CurrentY",
                            _("Current Y position in array"),
-                           _("Return the current Y position in the array (when you use the \"iterate through 3D array\" event"),
+                           _("Return the current Y position in the array (when you use the \"iterate through 3D array\" event)"),
                            _("3D Array"),
                            "res/function.png")
                 .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
@@ -340,7 +340,7 @@ public:
 
             AddExpression("3D::CurrentZ",
                            _("Current Z position in array"),
-                           _("Return the current Z position in the array (when you use the \"iterate through 3D array\" event"),
+                           _("Return the current Z position in the array (when you use the \"iterate through 3D array\" event)"),
                            _("3D Array"),
                            "res/function.png")
                 .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
@@ -364,7 +364,7 @@ public:
 
             AddExpression("3D::Current",
                            _("Current value in array"),
-                           _("Return the current value as number in the array (when you use the \"iterate through 3D array\" event"),
+                           _("Return the current value in the array (when you use the \"iterate through 3D array\" event)"),
                            _("3D Array"),
                            "res/function.png")
                 .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
@@ -388,7 +388,7 @@ public:
 
             AddStrExpression("3D::Current",
                            _("Current text in array"),
-                           _("Return the current value as text in the array (when you use the \"iterate through 3D array\" event"),
+                           _("Return the current text in the array (when you use the \"iterate through 3D array\" event)"),
                            _("3D Array"),
                            "res/function.png")
                 .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::StrExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
