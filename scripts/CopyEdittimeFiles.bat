@@ -1,2 +1,0 @@
-copy "E:\Developpement\Projets\Game Develop\GDSDK\IDE\bin\release\CppPlatform\Extensions\Array.xgdwe" "C:\Program Files (x86)\Game Develop\CppPlatform\Extensions\Array.xgdwe"
-copy "E:\Developpement\Projets\Game Develop\GDSDK\IDE\bin\release\CppPlatform\Extensions\libArray.a" "C:\Program Files (x86)\Game Develop\CppPlatform\Extensions\libArray.a"
