@@ -50,8 +50,8 @@ public:
                        _("Initialize the scene's arrays.\nThis action need to be executed at the beginning of the scene before any actions related to the arrays."),
                        _("Initialize arrays"),
                        _("Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddCodeOnlyParameter("currentScene", "")
 
@@ -65,8 +65,8 @@ public:
                        _("Set a value as a number at a specific index."),
                        _("Do _PARAM4__PARAM5_ to the value of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_]"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("expression", _("X index"))
@@ -86,8 +86,8 @@ public:
                        _("Test the value (as number) at a specific index."),
                        _("The value of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] is _PARAM4__PARAM5_"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("expression", _("X index"))
@@ -118,8 +118,8 @@ public:
                        _("Set a text at a specific index."),
                        _("Do _PARAM4__PARAM5_ to the text of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_]"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("expression", _("X index"))
@@ -139,8 +139,8 @@ public:
                        _("Test the text at a specific index."),
                        _("The text of _PARAM0_[_PARAM1_;_PARAM2_;_PARAM3_] is _PARAM4__PARAM5_"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("expression", _("X index"))
@@ -171,8 +171,8 @@ public:
                        _("Insert a value (number) at a specific index."),
                        _("Insert _PARAM3_ at the index _PARAM2_ on the axis _PARAM1_ of _PARAM0_"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("string", _("Axis (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
@@ -188,8 +188,8 @@ public:
                        _("Insert a text at a specific index."),
                        _("Insert _PARAM3_ at the index _PARAM2_ on the axis _PARAM1_ of _PARAM0_"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("string", _("Axis (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
@@ -207,8 +207,8 @@ public:
                        _("Remove an index from the array."),
                        _("Remove the index _PARAM2_ on the axis _PARAM1_ of _PARAM0_"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("string", _("Axis (\"X\", \"Y\" or \"Z\")")).SetDefaultValue("\"X\"")
@@ -225,8 +225,8 @@ public:
                        _("Set the size of an array.\nThis action is needed to create the array, otherwise the array is empty (size of 0 on X, Y and Z)."),
                        _("Set the size of _PARAM0_ to _PARAM1_;_PARAM2_;_PARAM3_"),
                        _("3D Array"),
-                       "CppPlatform/Extensions/AESicon24.png",
-                       "CppPlatform/Extensions/AESicon16.png")
+                       "res/array24.png",
+                       "res/array.png")
 
             .AddParameter("string", _("Array Name"))
             .AddParameter("expression", _("Width (size on X)"))
