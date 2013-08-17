@@ -274,131 +274,72 @@ public:
                         .SetCodeGenerator(boost::shared_ptr<gd::EventMetadata::CodeGenerator>(arr3DCodeGen));
         }
 
-        {
-            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
-            {
-                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
-                {
-                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
-                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+        AddExpression("3D::CurrentX",
+                      _("Current X position in array"),
+                      _("Return the current X position in the array (when you use the \"iterate through 3D array\" event)"),
+                      _("3D Array"),
+                      "res/function.png")
 
-                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().currentX";
+            .AddCodeOnlyParameter("currentScene", "")
 
-                    return code;
-                };
-            };
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetCurrentX")
+                                 .SetIncludeFile("Array/Array3DTools.h");
 
-            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
 
-            AddExpression("3D::CurrentX",
-                           _("Current X position in array"),
-                           _("Return the current X position in the array (when you use the \"iterate through 3D array\" event)"),
-                           _("3D Array"),
-                           "res/function.png")
-                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
-        }
+        AddExpression("3D::CurrentY",
+                      _("Current Y position in array"),
+                      _("Return the current Y position in the array (when you use the \"iterate through 3D array\" event)"),
+                      _("3D Array"),
+                      "res/function.png")
 
-        {
-            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
-            {
-                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
-                {
-                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
-                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+            .AddCodeOnlyParameter("currentScene", "")
 
-                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().currentY";
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetCurrentY")
+                                 .SetIncludeFile("Array/Array3DTools.h");
 
-                    return code;
-                };
-            };
 
-            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+        AddExpression("3D::CurrentZ",
+                      _("Current Z position in array"),
+                      _("Return the current Z position in the array (when you use the \"iterate through 3D array\" event)"),
+                      _("3D Array"),
+                      "res/function.png")
 
-            AddExpression("3D::CurrentY",
-                           _("Current Y position in array"),
-                           _("Return the current Y position in the array (when you use the \"iterate through 3D array\" event)"),
-                           _("3D Array"),
-                           "res/function.png")
-                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
-        }
+            .AddCodeOnlyParameter("currentScene", "")
 
-        {
-            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
-            {
-                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
-                {
-                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
-                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetCurrentZ")
+                                 .SetIncludeFile("Array/Array3DTools.h");
 
-                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().currentZ";
 
-                    return code;
-                };
-            };
+        AddExpression("3D::Current",
+                      _("Current value in array"),
+                      _("Return the current value in the array (when you use the \"iterate through 3D array\" event)"),
+                      _("3D Array"),
+                      "res/function.png")
 
-            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+            .AddCodeOnlyParameter("currentScene", "")
 
-            AddExpression("3D::CurrentZ",
-                           _("Current Z position in array"),
-                           _("Return the current Z position in the array (when you use the \"iterate through 3D array\" event)"),
-                           _("3D Array"),
-                           "res/function.png")
-                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
-        }
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetCurrentAsNumber")
+                                 .SetIncludeFile("Array/Array3DTools.h");
 
-        {
-            class CodeGenerator : public gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator
-            {
-                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
-                {
-                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
-                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
 
-                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().current.GetAsNumber()";
+        AddStrExpression("3D::Current",
+                         _("Current text in array"),
+                         _("Return the current text in the array (when you use the \"iterate through 3D array\" event)"),
+                         _("3D Array"),
+                         "res/function.png")
 
-                    return code;
-                };
-            };
+            .AddCodeOnlyParameter("currentScene", "")
 
-            gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
+            .codeExtraInformation.SetFunctionName("arr::threeDim::GetCurrentAsString")
+                                 .SetIncludeFile("Array/Array3DTools.h");
 
-            AddExpression("3D::Current",
-                           _("Current value in array"),
-                           _("Return the current value in the array (when you use the \"iterate through 3D array\" event)"),
-                           _("3D Array"),
-                           "res/function.png")
-                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::ExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
-        }
-
-        {
-            class CodeGenerator : public gd::StrExpressionMetadata::ExtraInformation::CustomCodeGenerator
-            {
-                virtual std::string GenerateCode(const std::vector<gd::Expression> & parameters, gd::EventsCodeGenerator & codeGenerator, gd::EventsCodeGenerationContext & context)
-                {
-                    codeGenerator.AddIncludeFile("Array/Array3DEventInfo.h");
-                    codeGenerator.AddIncludeFile("Array/ArrayValue.h");
-
-                    std::string code = "arr::ArrayManager::GetInstance()->GetArray3DEventInfo(runtimeContext->scene->game).GetEventInfo().current.GetAsText()";
-
-                    return code;
-                };
-            };
-
-            gd::StrExpressionMetadata::ExtraInformation::CustomCodeGenerator * codeGenerator = new CodeGenerator; //Need for code to compile
-
-            AddStrExpression("3D::Current",
-                           _("Current text in array"),
-                           _("Return the current text in the array (when you use the \"iterate through 3D array\" event)"),
-                           _("3D Array"),
-                           "res/function.png")
-                .codeExtraInformation.SetCustomCodeGenerator(boost::shared_ptr<gd::StrExpressionMetadata::ExtraInformation::CustomCodeGenerator>(codeGenerator));
-        }
 
 
         #endif
 
         GD_COMPLETE_EXTENSION_COMPILATION_INFORMATION();
     };
+
     virtual ~Extension()
     {
         arr::ArrayManager::Kill();

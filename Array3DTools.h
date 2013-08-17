@@ -37,6 +37,13 @@ int GD_EXTENSION_API GetHeight(const std::string &name, RuntimeScene &scene);
 int GD_EXTENSION_API GetDepth(const std::string &name, RuntimeScene &scene);
 void GD_EXTENSION_API SetSize(const std::string &name, int d1Size, int d2Size, int d3Size, RuntimeScene &scene);
 
+int GD_EXTENSION_API GetCurrentX(RuntimeScene &scene);
+int GD_EXTENSION_API GetCurrentY(RuntimeScene &scene);
+int GD_EXTENSION_API GetCurrentZ(RuntimeScene &scene);
+
+double GD_EXTENSION_API GetCurrentAsNumber(RuntimeScene &scene);
+std::string GD_EXTENSION_API GetCurrentAsString(RuntimeScene &scene);
+
 }
 
 }

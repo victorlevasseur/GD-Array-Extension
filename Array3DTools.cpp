@@ -93,6 +93,31 @@ void GD_EXTENSION_API SetSize(const std::string &name, int d1Size, int d2Size, i
     vecArray.Resize(d1Size, d2Size, d3Size);
 }
 
+int GD_EXTENSION_API GetCurrentX(RuntimeScene &scene)
+{
+    return arr::ArrayManager::GetInstance()->GetArray3DEventInfo(scene.game).GetEventInfo().currentX;
+}
+
+int GD_EXTENSION_API GetCurrentY(RuntimeScene &scene)
+{
+    return arr::ArrayManager::GetInstance()->GetArray3DEventInfo(scene.game).GetEventInfo().currentY;
+}
+
+int GD_EXTENSION_API GetCurrentZ(RuntimeScene &scene)
+{
+    return arr::ArrayManager::GetInstance()->GetArray3DEventInfo(scene.game).GetEventInfo().currentZ;
+}
+
+double GD_EXTENSION_API GetCurrentAsNumber(RuntimeScene &scene)
+{
+    return arr::ArrayManager::GetInstance()->GetArray3DEventInfo(scene.game).GetEventInfo().current.GetAsNumber();
+}
+
+std::string GD_EXTENSION_API GetCurrentAsString(RuntimeScene &scene)
+{
+    return arr::ArrayManager::GetInstance()->GetArray3DEventInfo(scene.game).GetEventInfo().current.GetAsText();
+}
+
 
 }
 
