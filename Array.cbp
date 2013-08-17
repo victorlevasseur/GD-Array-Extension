@@ -582,7 +582,9 @@
 		<Unit filename="ArrayTools.h" />
 		<Unit filename="ArrayValue.h" />
 		<Unit filename="Extension.cpp" />
+		<Unit filename="Extension.h" />
 		<Unit filename="JsExtension.cpp" />
+		<Unit filename="JsExtension.h" />
 		<Unit filename="wxsmith/Array3DEventEditor.wxs" />
 		<Extensions>
 			<code_completion />

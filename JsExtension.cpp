@@ -1,19 +1,3 @@
-
-#if defined(GD_IDE_ONLY)
-#include "GDCore/PlatformDefinition/PlatformExtension.h"
-#include "GDCore/Tools/Version.h"
-#include <boost/version.hpp>
-#include <iostream>
-#include <wx/intl.h>
-//Ensure the wxWidgets macro "_" returns a std::string
-#if defined(_)
-    #undef _
-#endif
-#define _(s) std::string(wxGetTranslation((s)).mb_str())
-
-/**
- * \brief This class declares information about the JS extension.
- */
 /*
 Copyright (c) 2013 Victor Levasseur <victorlevasseur01@orange.fr>
 
@@ -24,66 +8,37 @@ Permission is granted to anyone to use this software for any purpose, including 
 3. This notice may not be removed or altered from any source distribution.
 */
 
-class JsExtension : public gd::PlatformExtension
+#if defined(GD_IDE_ONLY)
+
+#include "JsExtension.h"
+
+#include "GDCore/Tools/Version.h"
+#include <boost/version.hpp>
+#include <iostream>
+#include <wx/intl.h>
+//Ensure the wxWidgets macro "_" returns a std::string
+#if defined(_)
+    #undef _
+#endif
+#define _(s) std::string(wxGetTranslation((s)).mb_str())
+
+JsExtension::JsExtension() : gd::PlatformExtension()
 {
-public:
+    SetExtensionInformation("Array",
+                            _("Array"),
+                            _("Extension to store values and text inside arrays."),
+                            "Victor Levasseur",
+                            "zlib/libpng License ( Open Source )");
 
-    /**
-     * Constructor of an extension declares everything the extension contains : Objects, actions, conditions and expressions.
-     */
-    JsExtension()
-    {
-        SetExtensionInformation("Array",
-                              _("Array"),
-                              _("Extension to store values and text inside arrays."),
-                              "Victor Levasseur",
-                              "zlib/libpng License ( Open Source )");
+    CloneExtension("Game Develop C++ platform", "Array");
 
-        CloneExtension("Game Develop C++ platform", "Array");
+    StripUnimplementedInstructionsAndExpressions(); //Unimplemented things are listed here:
+}
 
-        /**GetObjectMetadata("TextObject::Text").SetIncludeFile("TextObject/textruntimeobject.js");
+JsExtension::~JsExtension()
+{
 
-        GetAllActionsForObject("TextObject::Text")["TextObject::String"].codeExtraInformation
-            .SetFunctionName("setString").SetAssociatedGetter("getString").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllConditionsForObject("TextObject::Text")["TextObject::String"].codeExtraInformation
-            .SetFunctionName("getString").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllActionsForObject("TextObject::Text")["TextObject::Size"].codeExtraInformation
-            .SetFunctionName("setCharacterSize").SetAssociatedGetter("getCharacterSize").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllConditionsForObject("TextObject::Text")["TextObject::Size"].codeExtraInformation
-            .SetFunctionName("getCharacterSize").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllActionsForObject("TextObject::Text")["TextObject::Angle"].codeExtraInformation
-            .SetFunctionName("setAngle").SetAssociatedGetter("getAngle").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllConditionsForObject("TextObject::Text")["TextObject::Angle"].codeExtraInformation
-            .SetFunctionName("getAngle").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllActionsForObject("TextObject::Text")["TextObject::Opacity"].codeExtraInformation
-            .SetFunctionName("setOpacity").SetAssociatedGetter("getOpacity").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllConditionsForObject("TextObject::Text")["TextObject::Opacity"].codeExtraInformation
-            .SetFunctionName("getOpacity").SetIncludeFile("TextObject/textruntimeobject.js");
-
-        GetAllActionsForObject("TextObject::Text")["TextObject::SetBold"].codeExtraInformation
-            .SetFunctionName("setBold").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllConditionsForObject("TextObject::Text")["TextObject::IsBold"].codeExtraInformation
-            .SetFunctionName("isBold").SetIncludeFile("TextObject/textruntimeobject.js");
-
-        GetAllActionsForObject("TextObject::Text")["TextObject::SetItalic"].codeExtraInformation
-            .SetFunctionName("setItalic").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllConditionsForObject("TextObject::Text")["TextObject::IsItalic"].codeExtraInformation
-            .SetFunctionName("isItalic").SetIncludeFile("TextObject/textruntimeobject.js");
-
-        GetAllExpressionsForObject("TextObject::Text")["TextObject::Opacity"].codeExtraInformation
-            .SetFunctionName("getOpacity").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllExpressionsForObject("TextObject::Text")["TextObject::Angle"].codeExtraInformation
-            .SetFunctionName("getAngle").SetIncludeFile("TextObject/textruntimeobject.js");
-        GetAllStrExpressionsForObject("TextObject::Text")["TextObject::String"].codeExtraInformation
-            .SetFunctionName("getString").SetIncludeFile("TextObject/textruntimeobject.js");
-
-        GetAllActionsForObject("TextObject::Text")["TextObject::ChangeColor"].codeExtraInformation
-            .SetFunctionName("setColor").SetIncludeFile("TextObject/textruntimeobject.js");**/
-
-        StripUnimplementedInstructionsAndExpressions(); //Unimplemented things are listed here:
-    };
-    virtual ~JsExtension() {};
-};
+}
 
 /**
  * Used by Game Develop to create the extension class
