@@ -20,7 +20,7 @@ Permission is granted to anyone to use this software for any purpose, including 
 
 #include "ArrayValue.h"
 #include "Array3D.h"
-#include "ArrayMap.h"
+#include "Dictionary.h"
 #include "Array3DEventInfo.h"
 
 typedef std::string ArrayNameType;
@@ -32,7 +32,7 @@ namespace arr
     struct ArraysContainer
     {
         std::map<ArrayNameType, Array3D> m_3dArrays;
-        std::map<ArrayNameType, ArrayMap> m_mapArrays;
+        std::map<ArrayNameType, Dictionary> m_dicArrays;
     };
 
     class GD_EXTENSION_API ArrayManager
@@ -70,7 +70,7 @@ namespace arr
             return;
 
         m_gameArrayContainer[game].m_3dArrays.clear();
-        m_gameArrayContainer[game].m_mapArrays.clear();
+        m_gameArrayContainer[game].m_dicArrays.clear();
         m_array3dEventInfos[game] = threeDim::Array3DEventInfoManager();
         #endif
     }
@@ -80,9 +80,9 @@ namespace arr
         return m_gameArrayContainer[game].m_3dArrays[name];
     }
 
-    inline ArrayMap& GetArrayMap(Game *game, const std::string &name)
+    inline Dictionary& GetDictionary(Game *game, const std::string &name)
     {
-        return m_gameArrayContainer[game].m_mapArrays[name];
+        return m_gameArrayContainer[game].m_dicArrays[name];
     }
 
     inline threeDim::Array3DEventInfoManager& GetArray3DEventInfo(Game *game)
@@ -94,6 +94,7 @@ namespace arr
         static ArrayManager *_singleton;
 
         std::map<Game*, ArraysContainer> m_gameArrayContainer;
+
         std::map<Game*, threeDim::Array3DEventInfoManager> m_array3dEventInfos;
     };
 

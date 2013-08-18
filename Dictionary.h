@@ -8,8 +8,8 @@ Permission is granted to anyone to use this software for any purpose, including 
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#ifndef ARRAYMAP_H
-#define ARRAYMAP_H
+#ifndef DICTIONARY_H
+#define DICTIONARY_H
 
 #include <map>
 #include <string>
@@ -18,12 +18,12 @@ Permission is granted to anyone to use this software for any purpose, including 
 namespace arr
 {
 
-class ArrayMap
+class Dictionary
 {
 
 public:
-    ArrayMap() {};
-    ~ArrayMap() {};
+    Dictionary() {};
+    ~Dictionary() {};
 
     inline double GetValueAsNumber(const std::string &key)
     {
@@ -51,6 +51,11 @@ public:
             m_array.erase(key);
     }
 
+    inline bool HasKey(const std::string &key)
+    {
+        return (m_array.count(key) != 0);
+    }
+
 private:
     std::map<std::string, Value> m_array;
 
@@ -58,4 +63,4 @@ private:
 
 }
 
-#endif // ARRAYMAP_H
+#endif // DICTIONARY_H

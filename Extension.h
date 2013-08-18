@@ -20,7 +20,7 @@ public:
 
 private:
     void DeclareArray3D();
-    void DeclareDictonary();
+    void DeclareDictionary();
     void DeclareStack();
     void DeclareQueue();
 };

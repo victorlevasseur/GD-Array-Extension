@@ -8,4 +8,18 @@ Permission is granted to anyone to use this software for any purpose, including 
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "ArrayMapTools.h"
+#include "DictionaryTools.h"
+
+#include "Dictionary.h"
+
+namespace arr
+{
+
+namespace dic
+{
+
+
+
+}
+
+}

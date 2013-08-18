@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Project>
+    <GDVersion Major="3" Minor="1" Build="61" Revision="0" />
+    <Info winExecutableFilename="" winExecutableIconFile="" linuxExecutableFilename="" macExecutableFilename="" useExternalSourceFiles="false">
+        <Nom value="Project" />
+        <Auteur value="" />
+        <Extensions>
+            <Extension name="BuiltinObject" />
+            <Extension name="BuiltinAudio" />
+            <Extension name="BuiltinVariables" />
+            <Extension name="BuiltinTime" />
+            <Extension name="BuiltinMouse" />
+            <Extension name="BuiltinKeyboard" />
+            <Extension name="BuiltinJoystick" />
+            <Extension name="BuiltinCamera" />
+            <Extension name="BuiltinWindow" />
+            <Extension name="BuiltinFile" />
+            <Extension name="BuiltinNetwork" />
+            <Extension name="BuiltinScene" />
+            <Extension name="BuiltinAdvanced" />
+            <Extension name="Sprite" />
+            <Extension name="BuiltinCommonInstructions" />
+            <Extension name="BuiltinCommonConversions" />
+            <Extension name="BuiltinStringInstructions" />
+            <Extension name="BuiltinMathematicalTools" />
+            <Extension name="BuiltinExternalLayouts" />
+            <Extension name="Array" />
+        </Extensions>
+        <Platforms current="Game Develop C++ platform">
+            <Platform name="Game Develop C++ platform" />
+        </Platforms>
+        <WindowW value="800" />
+        <WindowH value="600" />
+        <Portable />
+        <LatestCompilationDirectory value="" />
+        <FPSmax value="-1" />
+        <FPSmin value="10" />
+        <verticalSync value="false" />
+    </Info>
+    <Resources>
+        <Resources />
+        <ResourceFolders />
+    </Resources>
+    <Objects />
+    <ObjectGroups />
+    <Variables />
+    <Scenes firstScene="">
+        <Scene nom="New scene" mangledName="New_32scene" r="209.000000" v="209.000000" b="209.000000" titre="" oglFOV="90.000000" oglZNear="1.000000" oglZFar="500.000000" standardSortMethod="true" stopSoundsOnStartup="true" disableInputWhenNotFocused="true">
+            <UISettings gridWidth="32.000000" grid="false" snap="true" gridHeight="32.000000" gridR="158.000000" gridG="180.000000" gridB="255.000000" zoomFactor="1.000000" windowMask="false" associatedLayout="" />
+            <GroupesObjets />
+            <Objets />
+            <Layers>
+                <Layer Name="" Visibility="true">
+                    <Camera DefaultSize="true" Width="0.000000" Height="0.000000" DefaultViewport="true" ViewportLeft="0.000000" ViewportTop="0.000000" ViewportRight="1.000000" ViewportBottom="1.000000" />
+                </Layer>
+            </Layers>
+            <Variables />
+            <AutomatismsSharedDatas />
+            <Positions />
+            <Events>
+                <Event disabled="false" folded="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions>
+                        <Condition>
+                            <Type value="DepartScene" Contraire="false" />
+                            <Parametre value="" />
+                        </Condition>
+                    </Conditions>
+                    <Actions>
+                        <Action>
+                            <Type value="Array::Init" />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
+                </Event>
+                <Event disabled="false" folded="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions />
+                    <Actions>
+                        <Action>
+                            <Type value="Array::3D_InsertValueAsNumber" />
+                            <Parametre value='&quot;test&quot;' />
+                            <Parametre value='&quot;X&quot;' />
+                            <Parametre value='int(Array::3D::Width(&quot;test&quot;) / 2)' />
+                            <Parametre value="Random(10)" />
+                            <Parametre value="" />
+                        </Action>
+                        <Action>
+                            <Type value="ModVarScene" />
+                            <Parametre value="" />
+                            <Parametre value="size" />
+                            <Parametre value="+" />
+                            <Parametre value="1" />
+                        </Action>
+                    </Actions>
+                </Event>
+            </Events>
+        </Scene>
+    </Scenes>
+    <ExternalEvents />
+    <ExternalLayouts />
+    <ExternalSourceFiles />
+</Project>

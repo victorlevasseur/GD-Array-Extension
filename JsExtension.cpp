@@ -33,6 +33,7 @@ JsExtension::JsExtension() : gd::PlatformExtension()
     CloneExtension("Game Develop C++ platform", "Array");
 
     DeclareArray3D();
+    DeclareDictionary();
 
     StripUnimplementedInstructionsAndExpressions(); //Unimplemented things are listed here:
 }

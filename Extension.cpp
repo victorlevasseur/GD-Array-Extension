@@ -51,6 +51,7 @@ Extension::Extension() : ExtensionBase()
         .SetIncludeFile("Array/ArrayTools.h");
 
     DeclareArray3D();
+    DeclareDictionary();
 
 #endif
 
