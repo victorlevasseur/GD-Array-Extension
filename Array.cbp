@@ -565,6 +565,7 @@
 			<Add directory="../../ExtLibs/SFML/build-mingw-release/lib" />
 		</Linker>
 		<Unit filename="Array3D.h" />
+		<Unit filename="Array3DDeclaration.cpp" />
 		<Unit filename="Array3DEvent.cpp" />
 		<Unit filename="Array3DEvent.h" />
 		<Unit filename="Array3DEventEditor.cpp" />

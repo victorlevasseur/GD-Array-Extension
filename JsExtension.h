@@ -18,6 +18,12 @@ class JsExtension : public gd::PlatformExtension
 public:
     JsExtension();
     virtual ~JsExtension();
+
+private:
+    void DeclareArray3D();
+    void DeclareDictonary();
+    void DeclareStack();
+    void DeclareQueue();
 };
 
 #endif

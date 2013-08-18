@@ -17,6 +17,12 @@ class Extension : public ExtensionBase
 public:
     Extension();
     virtual ~Extension();
+
+private:
+    void DeclareArray3D();
+    void DeclareDictonary();
+    void DeclareStack();
+    void DeclareQueue();
 };
 
 #endif // EXTENSION_ARRAYS_H
