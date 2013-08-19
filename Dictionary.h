@@ -56,6 +56,11 @@ public:
         return (m_array.count(key) != 0);
     }
 
+    inline void Clear()
+    {
+        m_array.clear();
+    }
+
 private:
     std::map<std::string, Value> m_array;
 

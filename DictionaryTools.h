@@ -8,8 +8,10 @@ Permission is granted to anyone to use this software for any purpose, including 
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#ifndef ARRAYMAPTOOLS_H
-#define ARRAYMAPTOOLS_H
+#ifndef DICTIONARYTOOLS_H
+#define DICTIONARYTOOLS_H
+
+#include <GDCpp/RuntimeScene.h>
 
 namespace arr
 {
@@ -17,10 +19,11 @@ namespace arr
 namespace dic
 {
 
-
+double GD_EXTENSION_API GetValueAsNumber(const std::string &name, const std::string &key, RuntimeScene &scene);
+void GD_EXTENSION_API SetValueAsNumber(const std::string &name, const std::string &key, double value, RuntimeScene &scene);
 
 }
 
 }
 
-#endif // ARRAYMAPTOOLS_H
+#endif // DICTIONARYTOOLS_H

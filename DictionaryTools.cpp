@@ -11,6 +11,7 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "DictionaryTools.h"
 
 #include "Dictionary.h"
+#include "ArrayTools.h"
 
 namespace arr
 {
@@ -18,7 +19,19 @@ namespace arr
 namespace dic
 {
 
+double GD_EXTENSION_API GetValueAsNumber(const std::string &name, const std::string &key, RuntimeScene &scene)
+{
+    Dictionary &dicArray = ArrayManager::GetInstance()->GetDictionary(scene.game, name);
 
+    return dicArray.GetValueAsNumber(key);
+}
+
+void GD_EXTENSION_API SetValueAsNumber(const std::string &name, const std::string &key, double value, RuntimeScene &scene)
+{
+    Dictionary &dicArray = ArrayManager::GetInstance()->GetDictionary(scene.game, name);
+
+    dicArray.SetValue(key, value);
+}
 
 }
 
