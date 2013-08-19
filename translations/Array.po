@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Array Extension\n"
-"POT-Creation-Date: 2013-08-18 11:33+0100\n"
-"PO-Revision-Date: 2013-08-18 11:33+0100\n"
+"POT-Creation-Date: 2013-08-19 18:41+0100\n"
+"PO-Revision-Date: 2013-08-19 18:44+0100\n"
 "Last-Translator: Victor Levasseur <victorlevasseur01@orange.fr>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -34,10 +34,11 @@ msgstr ""
 #: ../Array3DDeclaration.cpp:90 ../Array3DDeclaration.cpp:106
 #: ../Array3DDeclaration.cpp:123 ../Array3DDeclaration.cpp:140
 #: ../Array3DDeclaration.cpp:159 ../Array3DDeclaration.cpp:177
-#: ../Array3DDeclaration.cpp:192 ../Array3DDeclaration.cpp:199
-#: ../Array3DDeclaration.cpp:206 ../Array3DDeclaration.cpp:230
-#: ../Array3DDeclaration.cpp:242 ../Array3DDeclaration.cpp:254
-#: ../Array3DDeclaration.cpp:266 ../Array3DDeclaration.cpp:278
+#: ../Array3DDeclaration.cpp:193 ../Array3DDeclaration.cpp:208
+#: ../Array3DDeclaration.cpp:215 ../Array3DDeclaration.cpp:222
+#: ../Array3DDeclaration.cpp:246 ../Array3DDeclaration.cpp:258
+#: ../Array3DDeclaration.cpp:270 ../Array3DDeclaration.cpp:282
+#: ../Array3DDeclaration.cpp:294
 msgid "3D Array"
 msgstr "Tableau 3D"
 
@@ -46,8 +47,8 @@ msgstr "Tableau 3D"
 #: ../Array3DDeclaration.cpp:94 ../Array3DDeclaration.cpp:108
 #: ../Array3DDeclaration.cpp:127 ../Array3DDeclaration.cpp:144
 #: ../Array3DDeclaration.cpp:163 ../Array3DDeclaration.cpp:181
-#: ../Array3DDeclaration.cpp:194 ../Array3DDeclaration.cpp:201
-#: ../Array3DDeclaration.cpp:208
+#: ../Array3DDeclaration.cpp:197 ../Array3DDeclaration.cpp:210
+#: ../Array3DDeclaration.cpp:217 ../Array3DDeclaration.cpp:224
 msgid "Array Name"
 msgstr "Nom du tableau"
 
@@ -167,10 +168,26 @@ msgid "Remove the index _PARAM2_ on the axis _PARAM1_ of _PARAM0_"
 msgstr "Insérer _PARAM3_ à l'indice _PARAM2_ sur l'axe _PARAM1_ de _PARAM0_"
 
 #: ../Array3DDeclaration.cpp:174
+msgid "Clear"
+msgstr "Effacer le contenu"
+
+#: ../Array3DDeclaration.cpp:175
+msgid ""
+"Clear an array (delete all the content).\n"
+"Note that the array keeps its size."
+msgstr ""
+"Efface le contenu d'un tableau.\n"
+"Notez que le tableau conserve sa taille."
+
+#: ../Array3DDeclaration.cpp:176
+msgid "Clear the array _PARAM0_"
+msgstr "Effacer le contenu du tableau _PARAM0_"
+
+#: ../Array3DDeclaration.cpp:190
 msgid "Set size"
 msgstr "Définir la taille"
 
-#: ../Array3DDeclaration.cpp:175
+#: ../Array3DDeclaration.cpp:191
 msgid ""
 "Set the size of an array.\n"
 "This action is needed to create the array, otherwise the array is empty "
@@ -180,39 +197,39 @@ msgstr ""
 "Cette action est indispensable pour créer un tableau, sinon le tableau est "
 "vide (taille de 0 sur X, Y et Z)."
 
-#: ../Array3DDeclaration.cpp:176
+#: ../Array3DDeclaration.cpp:192
 msgid "Set the size of _PARAM0_ to _PARAM1_;_PARAM2_;_PARAM3_"
 msgstr "Définir la taille de _PARAM0_ à _PARAM1_;_PARAM2_;_PARAM3_"
 
-#: ../Array3DDeclaration.cpp:182
+#: ../Array3DDeclaration.cpp:198
 msgid "Width (size on X)"
 msgstr "Largeur (taille sur X)"
 
-#: ../Array3DDeclaration.cpp:183
+#: ../Array3DDeclaration.cpp:199
 msgid "Height (size on Y)"
 msgstr "Hauteur (taille sur Y)"
 
-#: ../Array3DDeclaration.cpp:184
+#: ../Array3DDeclaration.cpp:200
 msgid "Depth (size on Z)"
 msgstr "Profondeur (taille sur Z)"
 
-#: ../Array3DDeclaration.cpp:192
+#: ../Array3DDeclaration.cpp:208
 msgid "Width of an array"
 msgstr "Largeur d'un tableau"
 
-#: ../Array3DDeclaration.cpp:199
+#: ../Array3DDeclaration.cpp:215
 msgid "Height of an array"
 msgstr "Hauteur d'un tableau"
 
-#: ../Array3DDeclaration.cpp:206
+#: ../Array3DDeclaration.cpp:222
 msgid "Depth of an array"
 msgstr "Profondeur d'un tableau"
 
-#: ../Array3DDeclaration.cpp:219
+#: ../Array3DDeclaration.cpp:235
 msgid "Iterate in a 3D Array"
 msgstr "Parcourir un tableau 3D"
 
-#: ../Array3DDeclaration.cpp:220
+#: ../Array3DDeclaration.cpp:236
 msgid ""
 "Execute the event for each values contained in a 3D Array. You can access "
 "the value and its index by using dedicated expressions"
@@ -221,11 +238,11 @@ msgstr ""
 "possible d'accéder à la valeur et à l'indice courant en utilisant des "
 "expressions dédiées"
 
-#: ../Array3DDeclaration.cpp:228
+#: ../Array3DDeclaration.cpp:244
 msgid "Current X position in array"
 msgstr "Indice actuel sur X"
 
-#: ../Array3DDeclaration.cpp:229
+#: ../Array3DDeclaration.cpp:245
 msgid ""
 "Return the current X position in the array (when you use the \"iterate "
 "through 3D array\" event)"
@@ -233,11 +250,11 @@ msgstr ""
 "Renvoi l'indice actuel sur X (parcouru par l'événement \"Parcourir un "
 "tableau 3D\")"
 
-#: ../Array3DDeclaration.cpp:240
+#: ../Array3DDeclaration.cpp:256
 msgid "Current Y position in array"
 msgstr "Indice actuel sur Y"
 
-#: ../Array3DDeclaration.cpp:241
+#: ../Array3DDeclaration.cpp:257
 msgid ""
 "Return the current Y position in the array (when you use the \"iterate "
 "through 3D array\" event)"
@@ -245,11 +262,11 @@ msgstr ""
 "Renvoi l'indice actuel sur Y (parcouru par l'événement \"Parcourir un "
 "tableau 3D\")"
 
-#: ../Array3DDeclaration.cpp:252
+#: ../Array3DDeclaration.cpp:268
 msgid "Current Z position in array"
 msgstr "Indice actuel sur Z"
 
-#: ../Array3DDeclaration.cpp:253
+#: ../Array3DDeclaration.cpp:269
 msgid ""
 "Return the current Z position in the array (when you use the \"iterate "
 "through 3D array\" event)"
@@ -257,11 +274,11 @@ msgstr ""
 "Renvoi l'indice actuel sur Z (parcouru par l'événement \"Parcourir un "
 "tableau 3D\")"
 
-#: ../Array3DDeclaration.cpp:264
+#: ../Array3DDeclaration.cpp:280
 msgid "Current value in array"
 msgstr "Valeur actuelle"
 
-#: ../Array3DDeclaration.cpp:265
+#: ../Array3DDeclaration.cpp:281
 msgid ""
 "Return the current value in the array (when you use the \"iterate through 3D "
 "array\" event)"
@@ -269,11 +286,11 @@ msgstr ""
 "Renvoi la valeur actuelle (parcourue par l'événement \"Parcourir un tableau "
 "3D\")"
 
-#: ../Array3DDeclaration.cpp:276
+#: ../Array3DDeclaration.cpp:292
 msgid "Current text in array"
 msgstr "Texte actuel"
 
-#: ../Array3DDeclaration.cpp:277
+#: ../Array3DDeclaration.cpp:293
 msgid ""
 "Return the current text in the array (when you use the \"iterate through 3D "
 "array\" event)"
