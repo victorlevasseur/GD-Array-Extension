@@ -109,6 +109,17 @@
                                 </Action>
                             </Actions>
                         </Event>
+                        <Event disabled="false" folded="false">
+                            <Type value="BuiltinCommonInstructions::Standard" />
+                            <Conditions />
+                            <Actions>
+                                <Action>
+                                    <Type value="Array::3D_Clear" />
+                                    <Parametre value='&quot;test&quot;' />
+                                    <Parametre value="" />
+                                </Action>
+                            </Actions>
+                        </Event>
                     </Events>
                 </Event>
                 <Event disabled="false" folded="false" name='&quot;test&quot;'>

@@ -172,7 +172,7 @@ void Extension::DeclareArray3D()
 
     AddAction("3D_Clear",
               _("Clear"),
-              _("Clear an array.\nNote that"),
+              _("Clear an array (delete all the content).\nNote that the array keeps its size."),
               _("Clear the array _PARAM0_"),
               _("3D Array"),
               "res/array24.png",
