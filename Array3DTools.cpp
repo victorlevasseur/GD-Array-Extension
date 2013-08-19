@@ -71,6 +71,13 @@ void GD_EXTENSION_API RemoveValue(const std::string &name, const std::string &di
     vecArray.Remove(priv::GetDimFromAxisName(dim), index);
 }
 
+void GD_EXTENSION_API Clear(const std::string &name, RuntimeScene &scene)
+{
+    Array3D &vecArray = ArrayManager::GetInstance()->GetArray3D(scene.game, name);
+
+    vecArray.Clear();
+}
+
 int GD_EXTENSION_API GetWidth(const std::string &name, RuntimeScene &scene)
 {
     return ArrayManager::GetInstance()->GetArray3D(scene.game, name).GetSize(1);

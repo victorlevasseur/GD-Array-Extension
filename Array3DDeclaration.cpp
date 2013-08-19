@@ -168,6 +168,22 @@ void Extension::DeclareArray3D()
         .codeExtraInformation.SetFunctionName("arr::threeDim::RemoveValue")
                              .SetIncludeFile("Array/Array3DTools.h");
 
+    /// Clear
+
+    AddAction("3D_Clear",
+              _("Clear"),
+              _("Clear an array.\nNote that"),
+              _("Clear the array _PARAM0_"),
+              _("3D Array"),
+              "res/array24.png",
+              "res/array.png")
+
+        .AddParameter("string", _("Array Name"))
+        .AddCodeOnlyParameter("currentScene", "")
+
+        .codeExtraInformation.SetFunctionName("arr::threeDim::Clear")
+                             .SetIncludeFile("Array/Array3DTools.h");
+
     /// Set size
 
     AddAction("3D_SetSize",

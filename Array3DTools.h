@@ -32,6 +32,8 @@ void GD_EXTENSION_API InsertValueAsString(const std::string &name, const std::st
 
 void GD_EXTENSION_API RemoveValue(const std::string &name, const std::string &dim, int index, RuntimeScene &scene);
 
+void GD_EXTENSION_API Clear(const std::string &name, RuntimeScene &scene);
+
 int GD_EXTENSION_API GetWidth(const std::string &name, RuntimeScene &scene);
 int GD_EXTENSION_API GetHeight(const std::string &name, RuntimeScene &scene);
 int GD_EXTENSION_API GetDepth(const std::string &name, RuntimeScene &scene);

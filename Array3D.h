@@ -223,6 +223,16 @@ public:
         }
     }
 
+    inline void Clear()
+    {
+        int d1Size = m_dimSize[0];
+        int d2Size = m_dimSize[1];
+        int d3Size = m_dimSize[2];
+
+        Resize(0, 0, 0);
+        Resize(d1Size, d2Size, d3Size);
+    }
+
     ///Extent the array if the index is not in it.
     inline void ExtentIfNecessary(int d1, int d2, int d3)
     {
