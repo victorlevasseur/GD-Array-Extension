@@ -75,6 +75,14 @@
                             <Parametre value="5" />
                             <Parametre value="" />
                         </Action>
+                        <Action>
+                            <Type value="Array::Dic_SetValueAsNumber" />
+                            <Parametre value='&quot;dictionary&quot;' />
+                            <Parametre value='&quot;PV&quot;' />
+                            <Parametre value="=" />
+                            <Parametre value="1000" />
+                            <Parametre value="" />
+                        </Action>
                     </Actions>
                     <Events>
                         <Event disabled="false" folded="false" name='&quot;test&quot;'>
@@ -89,33 +97,6 @@
                                     <Parametre value="Array::3D::CurrentZ()" />
                                     <Parametre value="=" />
                                     <Parametre value="Random(100)" />
-                                    <Parametre value="" />
-                                </Action>
-                            </Actions>
-                        </Event>
-                        <Event disabled="false" folded="false">
-                            <Type value="BuiltinCommonInstructions::Standard" />
-                            <Conditions />
-                            <Actions>
-                                <Action>
-                                    <Type value="Array::3D_SetValueAsNumber" />
-                                    <Parametre value='&quot;test&quot;' />
-                                    <Parametre value="2" />
-                                    <Parametre value="2" />
-                                    <Parametre value="2" />
-                                    <Parametre value="=" />
-                                    <Parametre value="10" />
-                                    <Parametre value="" />
-                                </Action>
-                            </Actions>
-                        </Event>
-                        <Event disabled="false" folded="false">
-                            <Type value="BuiltinCommonInstructions::Standard" />
-                            <Conditions />
-                            <Actions>
-                                <Action>
-                                    <Type value="Array::3D_Clear" />
-                                    <Parametre value='&quot;test&quot;' />
                                     <Parametre value="" />
                                 </Action>
                             </Actions>
@@ -139,6 +120,23 @@
                             <Parametre value="Array::3D::Current()" />
                             <Parametre value="Array::3D::CurrentX() * 60" />
                             <Parametre value="Array::3D::CurrentY() * 60" />
+                            <Parametre value='&quot;0;0;0&quot;' />
+                            <Parametre value="20" />
+                            <Parametre value="" />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
+                </Event>
+                <Event disabled="false" folded="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions />
+                    <Actions>
+                        <Action>
+                            <Type value="EcrireTexte" />
+                            <Parametre value="" />
+                            <Parametre value='ToString(Array::Dic::Get(&quot;dictionary&quot;, &quot;PV&quot;))' />
+                            <Parametre value="20" />
+                            <Parametre value="400" />
                             <Parametre value='&quot;0;0;0&quot;' />
                             <Parametre value="20" />
                             <Parametre value="" />
