@@ -44,7 +44,7 @@ void Extension::DeclareDictionary()
                              .SetManipulatedType("number")
                              .SetIncludeFile("Array/DictionaryTools.h");
 
-    AddExpression("Dic::Get", _("Value of a key"), _("Value of a key"), _("Dictionary"), "res/actions/rotate.png")
+    AddExpression("Dic::Get", _("Value of a key"), _("Value of a key"), _("Dictionary"), "res/array.png")
 
         .AddParameter("string", _("Dictionary Name"))
         .AddParameter("string", _("Key"))

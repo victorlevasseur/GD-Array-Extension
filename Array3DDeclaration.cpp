@@ -49,7 +49,7 @@ void Extension::DeclareArray3D()
                              .SetManipulatedType("number")
                              .SetIncludeFile("Array/Array3DTools.h");
 
-    AddExpression("3D::At", _("Value at an index"), _("Value at an index"), _("3D Array"), "res/actions/rotate.png")
+    AddExpression("3D::At", _("Value at an index"), _("Value at an index"), _("3D Array"), "res/array.png")
 
         .AddParameter("string", _("Array Name"))
         .AddParameter("expression", _("X index"))
@@ -103,7 +103,7 @@ void Extension::DeclareArray3D()
                              .SetManipulatedType("string")
                              .SetIncludeFile("Array/Array3DTools.h");
 
-    AddStrExpression("3D::At", _("Text at an index"), _("Text at an index"), _("3D Array"), "res/actions/rotate.png")
+    AddStrExpression("3D::At", _("Text at an index"), _("Text at an index"), _("3D Array"), "res/array.png")
 
         .AddParameter("string", _("Array Name"))
         .AddParameter("expression", _("X index"))
@@ -205,21 +205,21 @@ void Extension::DeclareArray3D()
 
     /// Get width, height, depth
 
-    AddExpression("3D::Width", _("Width of an array"), _("Width of an array"), _("3D Array"), "res/actions/rotate.png")
+    AddExpression("3D::Width", _("Width of an array"), _("Width of an array"), _("3D Array"), "res/array.png")
 
         .AddParameter("string", _("Array Name"))
         .AddCodeOnlyParameter("currentScene", "")
 
         .codeExtraInformation.SetFunctionName("arr::threeDim::GetWidth").SetIncludeFile("Array/Array3DTools.h");
 
-    AddExpression("3D::Height", _("Height of an array"), _("Height of an array"), _("3D Array"), "res/actions/rotate.png")
+    AddExpression("3D::Height", _("Height of an array"), _("Height of an array"), _("3D Array"), "res/array.png")
 
         .AddParameter("string", _("Array Name"))
         .AddCodeOnlyParameter("currentScene", "")
 
         .codeExtraInformation.SetFunctionName("arr::threeDim::GetHeight").SetIncludeFile("Array/Array3DTools.h");
 
-    AddExpression("3D::Depth", _("Depth of an array"), _("Depth of an array"), _("3D Array"), "res/actions/rotate.png")
+    AddExpression("3D::Depth", _("Depth of an array"), _("Depth of an array"), _("3D Array"), "res/array.png")
 
         .AddParameter("string", _("Array Name"))
         .AddCodeOnlyParameter("currentScene", "")
@@ -235,7 +235,7 @@ void Extension::DeclareArray3D()
                  _("Iterate in a 3D Array"),
                  _("Execute the event for each values contained in a 3D Array. You can access the value and its index by using dedicated expressions"),
                  "",
-                 "res/function.png",
+                 "res/array.png",
                  boost::shared_ptr<gd::BaseEvent>(new arr::threeDim::Array3DEvent))
         .SetCodeGenerator(boost::shared_ptr<gd::EventMetadata::CodeGenerator>(arr3DCodeGen));
     }
@@ -244,7 +244,7 @@ void Extension::DeclareArray3D()
                   _("Current X position in array"),
                   _("Return the current X position in the array (when you use the \"iterate through 3D array\" event)"),
                   _("3D Array"),
-                  "res/function.png")
+                  "res/array.png")
 
         .AddCodeOnlyParameter("currentScene", "")
 
@@ -256,7 +256,7 @@ void Extension::DeclareArray3D()
                   _("Current Y position in array"),
                   _("Return the current Y position in the array (when you use the \"iterate through 3D array\" event)"),
                   _("3D Array"),
-                  "res/function.png")
+                  "res/array.png")
 
         .AddCodeOnlyParameter("currentScene", "")
 
@@ -268,7 +268,7 @@ void Extension::DeclareArray3D()
                   _("Current Z position in array"),
                   _("Return the current Z position in the array (when you use the \"iterate through 3D array\" event)"),
                   _("3D Array"),
-                  "res/function.png")
+                  "res/array.png")
 
         .AddCodeOnlyParameter("currentScene", "")
 
@@ -280,7 +280,7 @@ void Extension::DeclareArray3D()
                   _("Current value in array"),
                   _("Return the current value in the array (when you use the \"iterate through 3D array\" event)"),
                   _("3D Array"),
-                  "res/function.png")
+                  "res/array.png")
 
         .AddCodeOnlyParameter("currentScene", "")
 
@@ -292,7 +292,7 @@ void Extension::DeclareArray3D()
                      _("Current text in array"),
                      _("Return the current text in the array (when you use the \"iterate through 3D array\" event)"),
                      _("3D Array"),
-                     "res/function.png")
+                     "res/array.png")
 
         .AddCodeOnlyParameter("currentScene", "")
 
